@@ -4,15 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Musico</title>
+    <title>Viktoriia Balan</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
 
-    <!-- CSS here -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -26,13 +24,73 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+    <style>
+        /* Перевизначаємо фон слайдера на ваше вертикальне фото */
+        .custom_hero_bg {
+            /* Замініть 'img/my-vertical-photo.jpg' на шлях до вашого вертикального фото */
+            background-image: url('img/hero3.jpg');
+            background-size: cover;
+            background-position: center top; 
+            background-repeat: no-repeat !important;
+            min-height: 85vh; /* Висота блоку баннера */
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Напівпрозоре затемнення, щоб напис поверх фото був чітким та легкo читався */
+        .custom_hero_bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.45); /* Затемнення (45%) */
+            z-index: 1;
+        }
+
+        .custom_hero_bg .container {
+            position: relative;
+            z-index: 2; /* Текст буде поверх затемнення */
+        }
+
+        /* Стиль для великого заголовка поверх фото */
+        .hero_title {
+            font-size: 64px;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            margin: 0;
+        }
+
+        .hero_subtitle {
+            font-size: 28px;
+            color: #f0f0f0;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+        }
+
+        /* Адаптивність для мобільних пристроїв */
+        @media (max-width: 768px) {
+            .hero_title {
+                font-size: 36px;
+                letter-spacing: 2px;
+            }
+            .hero_subtitle {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
 
     <!-- header-start -->
     <header>
@@ -44,12 +102,12 @@
                             <div class="col-xl-3 col-lg-2">
                                 <div class="logo">
                                     <a href="index.html">
-                                        <img src="img/logo.png" alt="">
+                                        <img src="img/logo.png" alt="Viktoriia Balan">
                                     </a>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-7">
-                                <div class="main-menu  d-none d-lg-block">
+                                <div class="main-menu d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
                                             <li><a class="active" href="index.html">home</a></li>
@@ -59,11 +117,6 @@
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">blog</a></li>
                                                     <li><a href="single-blog.html">single-blog</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                     <li><a href="elements.html">elements</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="contact.html">Contact</a></li>
@@ -85,7 +138,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -94,12 +146,15 @@
 
     <!-- slider_area_start -->
     <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
+        <!-- Вкажіть ваше вертикальне фото замість картинки з гітаристом -->
+        <div class="single_slider d-flex align-items-center custom_hero_bg">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="slider_text text-center ">
-                            <h3>Musician </h3>
+                        <div class="slider_text text-center">
+                            <!-- Напис поверх вашого фото -->
+                            <h1 class="hero_title">VIKTORIIA BALAN</h1>
+                            <p class="hero_subtitle">SOPRANO</p>
                         </div>
                     </div>
                 </div>
@@ -108,40 +163,10 @@
     </div>
     <!-- slider_area_end -->
 
-    <!-- music_area  -->
-    <div class="music_area">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-xl-10">
-                    <div class="row align-items-center">
-                                <div class="col-xl-9 col-md-9">
-                                    <div class="music_field">
-                                            <div class="thumb">
-                                                    <img src="img/music_man/1.png" alt="">
-                                                </div>
-                                                <div class="audio_name">
-                                                    <div class="name">
-                                                        <h4>Frando Kally</h4>
-                                                        <p>10 November, 2019</p>
-                                                    </div>
-                                                        <audio preload="auto" controls>
-                                                                <source src="https://www.w3schools.com/html/horse.mp3">
-                                                            </audio>
-                                                </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-md-3">
-                                    <div class="music_btn">
-                                            <a href="#" class="boxed-btn">buy albam</a>
-                                    </div>
-                                </div>
-                    </div>
-                </div>
+</body>
+</html>
 
-            </div>
-        </div>
-    </div>
-    <!-- music_area end  -->
+    
 
     <!-- about_area  -->
     <div class="about_area">
