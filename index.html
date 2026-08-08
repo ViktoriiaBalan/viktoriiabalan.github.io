@@ -26,7 +26,7 @@
     <!-- ШРИФТИ GOOGLE FONTS ДЛЯ ЕЛЕГАНТНОГО СТИЛЮ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         /* 1. ЕЛЕГАНТНИЙ ЛОГОТИП У ШАПЦІ */
@@ -85,7 +85,7 @@
             z-index: 1;
         }
 
-        /* 3. ВИРАЗНИЙ, ЧИТАБЕЛЬНИЙ ТЕКСТ ТА ЦИТАТИ В БЛОЦІ ABOUT */
+        /* 3. ВИДІЛЕННЯ ГОЛОВНОЇ ЦИТАТИ */
         .about_area {
             background-color: #ffffff;
             padding: 80px 0;
@@ -93,31 +93,42 @@
 
         .about_info .about_featured_quote {
             font-family: 'Cormorant Garamond', Georgia, serif !important;
-            font-size: 30px !important;
-            line-height: 1.3 !important;
+            font-size: 32px !important; /* Збільшений розмір шрифту */
+            line-height: 1.35 !important;
             font-weight: 600 !important;
+            font-style: italic !important; /* Вишуканий курсив */
             color: #111111 !important;
-            margin: 0 0 25px 0;
-            padding: 0;
+            margin: 0 0 30px 0;
+            padding: 5px 0 5px 22px;
             border: none;
+            border-left: 3px solid #c5a059 !important; /* Золота вертикальна лінія ліворуч */
+            position: relative;
+        }
+
+        /* Виділення важливих слів у цитаті золотим кольором */
+        .about_info .about_featured_quote .quote_highlight {
+            color: #a37c3f !important; /* Шляхетне золотисто-бронзове виділення */
+            font-weight: 700 !important;
         }
 
         .about_info .about_featured_quote span {
             display: block;
             font-family: 'Montserrat', sans-serif !important;
-            font-size: 12px !important;
+            font-size: 11px !important;
             font-weight: 600 !important;
-            color: #666666 !important;
-            margin-top: 10px;
-            letter-spacing: 2px;
+            font-style: normal !important;
+            color: #888888 !important;
+            margin-top: 12px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
         }
 
+        /* 4. ОСНОВНИЙ ТЕКСТ БІОГРАФІЇ */
         .about_info p.about_bio_text {
             font-family: 'Montserrat', sans-serif !important;
             font-size: 15.5px !important;
             line-height: 1.85 !important;
-            color: #1a1a1a !important; /* Насичений темний колір для чіткості */
+            color: #1a1a1a !important;
             font-weight: 400;
             margin-bottom: 25px;
         }
@@ -131,6 +142,7 @@
             font-style: italic !important;
         }
 
+        /* КНОПКА */
         .about_info .boxed-btn3-line {
             font-family: 'Montserrat', sans-serif !important;
             font-size: 11px !important;
@@ -233,13 +245,13 @@
                 <div class="col-xl-7 col-md-6">
                     <div class="about_info">
                         
-                        <!-- Прес-цитата -->
+                        <!-- АКЦЕНТНА ГОЛОВНА ЦИТАТА З ЗОЛОТИМ МАРКЕРОМ ТА ЕЛЕГАНТНИМ ШРИФТОМ -->
                         <blockquote class="about_featured_quote">
-                            “In the challenging spinto soprano role of Lady Macbeth, Viktoriia Balan is a revelation.”
+                            “In the challenging spinto soprano role of Lady Macbeth, Viktoriia Balan is <span class="quote_highlight">a revelation</span>.”
                             <span>— THE STAGE</span>
                         </blockquote>
 
-                        <!-- Офіційна біографія з виділеними ролями й конкурсами -->
+                        <!-- Офіційна біографія -->
                         <p class="about_bio_text">
                             Ukrainian lirico-spinto soprano Viktoriia Balan's <em>"glorious voice"</em> and <em>"bright and incisive vocal timbre"</em> have earned her recognition across European stages[cite: 6]. A graduate of the <strong>Odesa National Music Academy</strong>[cite: 4, 5], she is a finalist and a prize winner of several prestigious international competitions, including <strong>1st Prize at "Spazio Musica" in Orvieto</strong>, <strong>2nd Prize at "Franco Bonisolli" in Rovereto</strong>, winner of the 78th <strong>"European Community" Competition in Spoleto</strong>[cite: 4, 5]. Her career highlights include UK debut as <strong>Lady Macbeth</strong> (<em>Macbeth</em>) at <strong>Longborough Festival Opera</strong>, debut at <strong>Teatro Lirico Sperimentale di Spoleto</strong> as <strong>La Contessa</strong> (<em>Le Nozze di Figaro</em>) and <strong>Lady Macbeth</strong>, and <strong>Anna</strong> in Zandonai's <em>I cavalieri di Ekebù</em> at <strong>Teatro Zandonai in Rovereto</strong>[cite: 4, 5, 6].
                         </p>
@@ -258,7 +270,6 @@
 
 </body>
 </html>
-
 
     <!-- / youtube_video_area  -->
 
