@@ -158,24 +158,28 @@
         <div class="row align-items-center">
             <div class="col-xl-5 col-md-6">
                 <div class="about_thumb">
-                    <!-- Замініть 'img/hero2.png' на шлях до вашого фото -->
-                    <img class="img-fluid" src="img/hero2.png" alt="Viktoriia Balan">
+                    <!-- Фото співачки -->
+                    <img class="img-fluid" src="img/hero2.jpg" alt="Viktoriia Balan">
                 </div>
             </div>
             <div class="col-xl-7 col-md-6">
                 <div class="about_info">
-                    <h3>Viktoriia Balan</h3>
                     
-                    <!-- Акцентна цитата з преси -->
-                    <blockquote class="about_quote">
+                    <!-- Прес-цитата зверху -->
+                    <blockquote class="about_featured_quote">
                         “In the challenging spinto soprano role of Lady Macbeth, Viktoriia Balan is a revelation.”
-                        <span>— Inge Kjemtrup, <em>The Stage</em></span>
+                        <span>— The Stage</span>
                     </blockquote>
 
-                    <!-- Текст про вас із резюме -->
+                    <!-- Офіційна професійна біографія з деталями конкурсів -->
                     <p>
-                        <strong>Viktoriia Balan</strong> is a Ukrainian lirico-spinto soprano praised for her “glorious voice” and “bright and incisive vocal timbre”[cite: 1, 3]. A graduate of the Odesa National Music Academy and winner of the 1st Prize at the "Spazio Musica" Competition in Orvieto, she has performed major roles across European stages[cite: 1, 2]. Highlights include <strong>Lady Macbeth</strong> in Verdi’s <em>Macbeth</em> at Longborough Festival Opera (UK) and Teatro Lirico Sperimentale di Spoleto, <strong>La Contessa</strong> in <em>Le Nozze di Figaro</em>, and <strong>Anna</strong> in Zandonai’s <em>I cavalieri di Ekebù</em> at Teatro Zandonai[cite: 1, 2, 3].
+                        Ukrainian lirico-spinto soprano Viktoriia Balan's "glorious voice" (<em>Seen and Heard International</em>) and "bright and incisive vocal timbre" (<em>Il Giornale della Musica</em>) have earned her recognition across European stages. A graduate of the Odesa National Music Academy, she is a finalist and a prize winner of several prestigious international competitions, including 1st Prize at "Spazio Musica" in Orvieto, 2nd Prize at "Franco Bonisolli" in Rovereto, winner of the 78th "European Community" Competition in Spoleto. Her career highlights include UK debut as Lady Macbeth (<em>Macbeth</em>) at Longborough Festival Opera, debut at Teatro Lirico Sperimentale di Spoleto as La Contessa (<em>Le Nozze di Figaro</em>) and Lady Macbeth, and Anna in Zandonai's <em>I cavalieri di Ekebù</em> at Teatro Zandonai in Rovereto.
                     </p>
+
+                    <!-- Кнопка у стилі вашої теми -->
+                    <div class="about_btn_wrapper" style="margin-top: 25px;">
+                        <a href="about.html" class="boxed-btn3-line">READ FULL BIO</a>
+                    </div>
 
                 </div>
             </div>
@@ -185,28 +189,35 @@
 <!--/ about_area  -->
 
 <style>
-    /* Додаємо стилізацію для цитати в оригінальному колірному стилі теми */
-    .about_info .about_quote {
-        font-size: 20px;
-        line-height: 1.4;
-        font-style: italic;
-        color: #333333;
-        border-left: 3px solid #333333; /* Проста акуратна лінія під колір тексту */
-        padding-left: 15px;
-        margin: 15px 0 20px 0;
+    /* Стилі адаптовані під колірну гаму вашої теми */
+    .about_info .about_featured_quote {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 26px;
+        line-height: 1.3;
+        font-weight: 400;
+        margin: 0 0 20px 0;
+        padding: 0;
+        border: none;
     }
 
-    .about_info .about_quote span {
+    .about_info .about_featured_quote span {
         display: block;
-        font-size: 13px;
-        font-style: normal;
-        color: #777777;
-        margin-top: 5px;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 8px;
         letter-spacing: 1px;
+        text-transform: uppercase;
+        opacity: 0.7;
     }
 
-    .about_info p strong {
-        color: #111111;
+    .about_info p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .about_info p em {
+        font-style: italic;
     }
 </style>
 
