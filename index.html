@@ -8,7 +8,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -25,12 +24,40 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* Перевизначаємо фон слайдера на ваше вертикальне фото */
+        /* Стиль для текстового логотипу збоку вгорі замість картини, що не завантажувалася */
+        .brand_logo_link {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none !important;
+        }
+
+        .brand_name {
+            font-size: 18px; /* Невеликий акуратний шрифт */
+            font-weight: 700;
+            color: #ffffff !important;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .brand_subtitle {
+            font-size: 11px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8) !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .brand_logo_link:hover .brand_name {
+            color: #dddddd !important;
+        }
+
+        /* Налаштування вертикального фото для баннера */
         .custom_hero_bg {
-            /* Замініть 'img/hero3.jpg' на шлях до вашого вертикального фото */
             background-image: url('img/hero3.jpg');
             background-size: cover;
-            background-position: center 20% !important;
+            background-position: center 20% !important; /* Фокусуємо на обличчі */
             background-repeat: no-repeat !important;
             min-height: 85vh; /* Висота блоку баннера */
             display: flex;
@@ -38,7 +65,7 @@
             position: relative;
         }
 
-        /* Напівпрозоре затемнення, щоб напис поверх фото був чітким та легкo читався */
+        /* Легке затемнення зверху для кращої читабельності шапки */
         .custom_hero_bg::before {
             content: "";
             position: absolute;
@@ -46,45 +73,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.45); /* Затемнення (45%) */
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%);
             z-index: 1;
-        }
-
-        .custom_hero_bg .container {
-            position: relative;
-            z-index: 2; /* Текст буде поверх затемнення */
-        }
-
-        /* Стиль для великого заголовка поверх фото */
-        .hero_title {
-            font-size: 64px;
-            font-weight: 800;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
-            margin: 0;
-        }
-
-        .hero_subtitle {
-            font-size: 28px;
-            color: #f0f0f0;
-            font-weight: 300;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-top: 10px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-        }
-
-        /* Адаптивність для мобільних пристроїв */
-        @media (max-width: 768px) {
-            .hero_title {
-                font-size: 36px;
-                letter-spacing: 2px;
-            }
-            .hero_subtitle {
-                font-size: 18px;
-            }
         }
     </style>
 </head>
@@ -98,13 +88,17 @@
                 <div class="container-fluid">
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-2">
+                            
+                            <!-- ТЕКСТОВИЙ ЛОГОТИП ЗБОКУ (замість img/logo.png) -->
+                            <div class="col-xl-3 col-lg-3 col-md-4">
                                 <div class="logo">
-                                    <a href="index.html">
-                                        <img src="img/logo.png" alt="Viktoriia Balan">
+                                    <a href="index.html" class="brand_logo_link">
+                                        <span class="brand_name">Viktoriia Balan</span>
+                                        <span class="brand_subtitle">Soprano</span>
                                     </a>
                                 </div>
                             </div>
+
                             <div class="col-xl-6 col-lg-7">
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
@@ -123,7 +117,8 @@
                                     </nav>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+
+                            <div class="col-xl-3 col-lg-2 d-none d-lg-block">
                                 <div class="social_icon text-right">
                                     <ul>
                                         <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
@@ -132,6 +127,7 @@
                                     </ul>
                                 </div>
                             </div>
+
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
@@ -145,19 +141,8 @@
 
     <!-- slider_area_start -->
     <div class="slider_area">
-        <!-- Вкажіть ваше вертикальне фото замість картинки з гітаристом -->
+        <!-- Вертикальне фото відображається повністю чистим, без текстів поверх обличчя -->
         <div class="single_slider d-flex align-items-center custom_hero_bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="slider_text text-center">
-                            <!-- Напис поверх вашого фото -->
-                            <h1 class="hero_title">VIKTORIIA BALAN</h1>
-                            <p class="hero_subtitle">SOPRANO</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!-- slider_area_end -->
