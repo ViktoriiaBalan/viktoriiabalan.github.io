@@ -23,49 +23,57 @@
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- ШРИФТИ GOOGLE FONTS ДЛЯ ЕЛЕГАНТНОГО СТИЛЮ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
-        /* Стиль для текстового логотипу збоку вгорі замість картини, що не завантажувалася */
+        /* 1. ЕЛЕГАНТНИЙ ЛОГОТИП У ШАПЦІ */
         .brand_logo_link {
             display: flex;
             flex-direction: column;
             text-decoration: none !important;
+            padding: 5px 0;
         }
 
         .brand_name {
-            font-size: 18px; /* Невеликий акуратний шрифт */
-            font-weight: 700;
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 26px !important; 
+            font-weight: 600 !important;
             color: #ffffff !important;
             letter-spacing: 2px;
             text-transform: uppercase;
-            line-height: 1.2;
+            line-height: 1;
+            transition: color 0.3s ease;
         }
 
         .brand_subtitle {
-            font-size: 11px;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.8) !important;
-            letter-spacing: 3px;
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 10px !important;
+            font-weight: 400 !important;
+            color: #c5a059 !important; /* Вишуканий золотистий відтінок */
+            letter-spacing: 4px !important;
             text-transform: uppercase;
-            margin-top: 2px;
+            margin-top: 5px;
         }
 
         .brand_logo_link:hover .brand_name {
-            color: #dddddd !important;
+            color: #c5a059 !important;
         }
 
-        /* Налаштування вертикального фото для баннера */
+        /* 2. НАЛАШТУВАННЯ БАННЕРА */
         .custom_hero_bg {
             background-image: url('img/hero3.jpg');
             background-size: cover;
-            background-position: center 20% !important; /* Фокусуємо на обличчі */
+            background-position: center 20% !important;
             background-repeat: no-repeat !important;
-            min-height: 85vh; /* Висота блоку баннера */
+            min-height: 85vh;
             display: flex;
             align-items: center;
             position: relative;
         }
 
-        /* Легке затемнення зверху для кращої читабельності шапки */
         .custom_hero_bg::before {
             content: "";
             position: absolute;
@@ -76,6 +84,70 @@
             background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%);
             z-index: 1;
         }
+
+        /* 3. ВИРАЗНИЙ, ЧИТАБЕЛЬНИЙ ТЕКСТ ТА ЦИТАТИ В БЛОЦІ ABOUT */
+        .about_area {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+
+        .about_info .about_featured_quote {
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 30px !important;
+            line-height: 1.3 !important;
+            font-weight: 600 !important;
+            color: #111111 !important;
+            margin: 0 0 25px 0;
+            padding: 0;
+            border: none;
+        }
+
+        .about_info .about_featured_quote span {
+            display: block;
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 12px !important;
+            font-weight: 600 !important;
+            color: #666666 !important;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about_info p.about_bio_text {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 15.5px !important;
+            line-height: 1.85 !important;
+            color: #1a1a1a !important; /* Насичений темний колір для чіткості */
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+
+        .about_info p.about_bio_text strong {
+            font-weight: 600 !important;
+            color: #000000 !important;
+        }
+
+        .about_info p.about_bio_text em {
+            font-style: italic !important;
+        }
+
+        .about_info .boxed-btn3-line {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            letter-spacing: 2px !important;
+            color: #111111 !important;
+            border: 1px solid #111111 !important;
+            padding: 12px 28px !important;
+            text-decoration: none !important;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .about_info .boxed-btn3-line:hover {
+            background-color: #111111 !important;
+            color: #ffffff !important;
+        }
     </style>
 </head>
 
@@ -83,30 +155,31 @@
 
     <!-- header-start -->
     <header>
-        <div class="header-area ">
+        <div class="header-area">
             <div id="sticky-header" class="main-header-area">
                 <div class="container-fluid">
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
                             
-                            <!-- ТЕКСТОВИЙ ЛОГОТИП ЗБОКУ (замість img/logo.png) -->
+                            <!-- ТЕКСТОВИЙ ЛОГОТИП -->
                             <div class="col-xl-3 col-lg-3 col-md-4">
                                 <div class="logo">
                                     <a href="index.html" class="brand_logo_link">
-                                        <span class="brand_name">Viktoriia Balan</span>
-                                        <span class="brand_subtitle">Soprano</span>
+                                        <span class="brand_name">VIKTORIIA BALAN</span>
+                                        <span class="brand_subtitle">SOPRANO</span>
                                     </a>
                                 </div>
                             </div>
 
+                            <!-- НАВІГАЦІЯ -->
                             <div class="col-xl-6 col-lg-7">
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a class="active" href="index.html">home</a></li>
+                                            <li><a class="active" href="index.html">Home</a></li>
                                             <li><a href="about.html">About</a></li>
                                             <li><a href="track.html">Repertoire</a></li>
-											 <li><a href="press.html">Press</a></li>
+                                            <li><a href="press.html">Press</a></li>
                                             <li><a href="#">Media <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">Photos</a></li>
@@ -119,11 +192,12 @@
                                 </div>
                             </div>
 
+                            <!-- СОЦМЕРЕЖІ -->
                             <div class="col-xl-3 col-lg-2 d-none d-lg-block">
                                 <div class="social_icon text-right">
                                     <ul>
-                                        <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-                                        <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -141,169 +215,51 @@
 
     <!-- slider_area_start -->
     <div class="slider_area">
-        <!-- Вертикальне фото відображається повністю чистим, без текстів поверх обличчя -->
         <div class="single_slider d-flex align-items-center custom_hero_bg">
         </div>
     </div>
     <!-- slider_area_end -->
 
+    <!-- about_area -->
+    <div class="about_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-5 col-md-6">
+                    <div class="about_thumb">
+                        <!-- Фото співачки -->
+                        <img class="img-fluid" src="img/hero1.jpg" alt="Viktoriia Balan">
+                    </div>
+                </div>
+                <div class="col-xl-7 col-md-6">
+                    <div class="about_info">
+                        
+                        <!-- Прес-цитата -->
+                        <blockquote class="about_featured_quote">
+                            “In the challenging spinto soprano role of Lady Macbeth, Viktoriia Balan is a revelation.”
+                            <span>— THE STAGE</span>
+                        </blockquote>
+
+                        <!-- Офіційна біографія з виділеними ролями й конкурсами -->
+                        <p class="about_bio_text">
+                            Ukrainian lirico-spinto soprano Viktoriia Balan's "glorious voice" (<em>Seen and Heard International</em>) and "bright and incisive vocal timbre" (<em>Il Giornale della Musica</em>) have earned her recognition across European stages[cite: 6]. A graduate of the <strong>Odesa National Music Academy</strong>[cite: 4, 5], she is a finalist and a prize winner of several prestigious international competitions, including <strong>1st Prize at "Spazio Musica" in Orvieto</strong>, <strong>2nd Prize at "Franco Bonisolli" in Rovereto</strong>, winner of the 78th <strong>"European Community" Competition in Spoleto</strong>[cite: 4, 5]. Her career highlights include UK debut as <strong>Lady Macbeth</strong> (<em>Macbeth</em>) at <strong>Longborough Festival Opera</strong>, debut at <strong>Teatro Lirico Sperimentale di Spoleto</strong> as <strong>La Contessa</strong> (<em>Le Nozze di Figaro</em>) and <strong>Lady Macbeth</strong>, and <strong>Anna</strong> in Zandonai's <em>I cavalieri di Ekebù</em> at <strong>Teatro Zandonai in Rovereto</strong>[cite: 4, 5, 6].
+                        </p>
+
+                        <!-- Кнопка -->
+                        <div class="about_btn_wrapper">
+                            <a href="about.html" class="boxed-btn3-line">READ FULL BIO</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ about_area -->
+
 </body>
 </html>
 
-    
 
-    <!-- about_area  -->
-<div class="about_area">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xl-5 col-md-6">
-                <div class="about_thumb">
-                    <!-- Фото співачки -->
-                    <img class="img-fluid" src="img/hero1.jpg" alt="Viktoriia Balan">
-                </div>
-            </div>
-            <div class="col-xl-7 col-md-6">
-                <div class="about_info">
-                    
-                    <!-- Прес-цитата зверху -->
-                    <blockquote class="about_featured_quote">
-                        “In the challenging spinto soprano role of Lady Macbeth, Viktoriia Balan is a revelation.”
-                        <span>— The Stage</span>
-                    </blockquote>
-
-                    <!-- Офіційна професійна біографія з деталями конкурсів -->
-                    <p>
-                        Ukrainian lirico-spinto soprano Viktoriia Balan's "glorious voice" and "bright and incisive vocal timbre" have earned her recognition across European stages. A graduate of the <strong>Odesa National Music Academy</strong>, she is a finalist and a prize winner of several prestigious international competitions, including <strong>1st Prize at "Spazio Musica" in Orvieto</strong>, <strong>2nd Prize at "Franco Bonisolli" in Rovereto</strong>, winner of the 78th <strong>"European Community" Competition in Spoleto</strong>. Her career highlights include UK debut as <strong>Lady Macbeth</strong> (<em>Macbeth</em>) at <strong>Longborough Festival Opera</strong>, debut at <strong>Teatro Lirico Sperimentale di Spoleto</strong> as <strong>La Contessa</strong> (<em>Le Nozze di Figaro</em>) and <strong>Lady Macbeth</strong>, and <strong>Anna</strong> in Zandonai's <em>I cavalieri di Ekebù</em> at <strong>Teatro Zandonai in Rovereto</strong>.
-                    </p>
-
-                    <!-- Кнопка у стилі вашої теми -->
-                    <div class="about_btn_wrapper" style="margin-top: 25px;">
-                        <a href="about.html" class="boxed-btn3-line">READ FULL BIO</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--/ about_area  -->
-
-<style>
-    /* Стилі адаптовані під колірну гаму вашої теми */
-    .about_info .about_featured_quote {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-size: 26px;
-        line-height: 1.3;
-        font-weight: 400;
-        margin: 0 0 20px 0;
-        padding: 0;
-        border: none;
-    }
-
-    .about_info .about_featured_quote span {
-        display: block;
-        font-family: inherit;
-        font-size: 14px;
-        font-weight: 600;
-        margin-top: 8px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        opacity: 0.7;
-    }
-
-    .about_info p {
-        font-size: 16px;
-        line-height: 1.7;
-    }
-
-    .about_info p em {
-        font-style: italic;
-    }
-</style>
-
-    <!-- youtube_video_area  -->
-    <div class="youtube_video_area">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single_video">
-                        <div class="thumb">
-                            <img src="img/video/1.png" alt="">
-                        </div>
-                        <div class="hover_elements">
-                            <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
-                                            <i class="fa fa-play"></i>
-                                        </a>
-                            </div>
-
-                            <div class="hover_inner">
-                                <span>New York Show-2018</span>
-                                <h3><a href="#">Shadows of My Dream</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single_video">
-                        <div class="thumb">
-                            <img src="img/video/2.png" alt="">
-                        </div>
-                        <div class="hover_elements">
-                            <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
-                                            <i class="fa fa-play"></i>
-                                        </a>
-                            </div>
-
-                            <div class="hover_inner">
-                                <span>New York Show-2018</span>
-                                <h3><a href="#">Shadows of My Dream</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single_video">
-                        <div class="thumb">
-                            <img src="img/video/3.png" alt="">
-                        </div>
-                        <div class="hover_elements">
-                            <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
-                                            <i class="fa fa-play"></i>
-                                        </a>
-                            </div>
-
-                            <div class="hover_inner">
-                                <span>New York Show-2018</span>
-                                <h3><a href="#">Shadows of My Dream</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="single_video">
-                        <div class="thumb">
-                            <img src="img/video/4.png" alt="">
-                        </div>
-                        <div class="hover_elements">
-                            <div class="video">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
-                                            <i class="fa fa-play"></i>
-                                        </a>
-                            </div>
-
-                            <div class="hover_inner">
-                                <span>New York Show-2018</span>
-                                <h3><a href="#">Shadows of My Dream</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- / youtube_video_area  -->
 
     <!-- music_area  -->
