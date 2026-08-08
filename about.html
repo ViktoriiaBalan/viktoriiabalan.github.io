@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Viktoriia Balan | Biography</title>
-    <meta name="description" content="Official biography and artistic career of Viktoriia Balan - Ukrainian lirico-spinto soprano based in Italy.">
+    <meta name="description" content="Official biography and artistic career of Viktoriia Balan - Ukrainian lirico-spinto soprano ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
@@ -25,92 +25,184 @@
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- GOOGLE FONTS ДЛЯ ЕЛЕГАНТНОГО СТИЛЮ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
-        /* Hero Banner (matching index style with "About" background text) */
-        .bradcam_area.hero_style {
-            height: 100vh;
-            min-height: 700px;
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
+        /* ПОВНЕ БЛОКУВАННЯ БУДЬ-ЯКИХ РУХІВ ШАПКИ ПРИ СКРОЛІ */
+        header {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            z-index: 99999 !important;
         }
 
-        /* "About" overlay text */
-        .bradcam_overlay_text {
-            position: absolute;
-            top: 58%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 130px;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.12);
+        .header-area,
+        .main-header-area,
+        #sticky-header,
+        .sticky {
+            position: relative !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            background-color: rgba(0, 0, 0, 0.9) !important; /* Фіксований темний фон */
+            backdrop-filter: blur(5px);
+            
+            /* Вимикаємо трансформації та анімації */
+            animation: none !important;
+            transition: none !important;
+            transform: none !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+        }
+		
+        /* 1. ЕЛЕГАНТНИЙ ЛОГОТИП У ШАПЦІ */
+        .brand_logo_link {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none !important;
+            padding: 5px 0;
+        }
+
+        .brand_name {
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 26px !important; 
+            font-weight: 600 !important;
+            color: #ffffff !important;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            letter-spacing: 14px;
-            white-space: nowrap;
-            pointer-events: none;
+            line-height: 1;
+            transition: color 0.3s ease;
+        }
+
+        .brand_subtitle {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 10px !important;
+            font-weight: 400 !important;
+            color: #c5a059 !important; /* Золотистий відтінок */
+            letter-spacing: 4px !important;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .brand_logo_link:hover .brand_name {
+            color: #c5a059 !important;
+        }
+
+        /* 2. НАЛАШТУВАННЯ БАННЕРА (Збережено ваші параметри позиціонування) */
+        .custom_hero_bg {
+            background-image: url('img/hero2.jpg');
+            background-size: cover;
+            background-position: center 20% !important;
+            background-repeat: no-repeat !important;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .custom_hero_bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%);
             z-index: 1;
         }
 
-        .bradcam_text {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Typography & Paragraphs for Continuous Text Biography */
-        .about_info .sub_title {
-            color: #ff3514;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 12px;
-        }
-
-        .about_info p {
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 22px;
-            color: #c7c7c7;
-        }
-
-        .about_info h4 {
-            color: #ffffff;
-            font-size: 22px;
-            margin-top: 35px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #ff3514;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        /* Press Banner Section */
-        .press_banner_section {
+        /* 3. ВИДІЛЕННЯ ГОЛОВНОЇ ЦИТАТИ ТА СТИЛІ БІОГРАФІЇ */
+        .about_area {
+            background-color: #ffffff;
             padding: 90px 0;
-            background-color: #101010;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
+        .about_info .about_featured_quote {
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 30px !important;
+            line-height: 1.4 !important;
+            font-weight: 600 !important;
+            font-style: italic !important;
+            color: #111111 !important;
+            margin: 0 0 30px 0;
+            padding: 5px 0 5px 22px;
+            border: none;
+            border-left: 3px solid #c5a059 !important; /* Золота вертикальна лінія */
+            position: relative;
+        }
+
+        .about_info .about_featured_quote .quote_highlight {
+            color: #a37c3f !important;
+            font-weight: 700 !important;
+        }
+
+        .about_info p.about_bio_text {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 15.5px !important;
+            line-height: 1.85 !important;
+            color: #2c2c2c !important;
+            font-weight: 400;
+            margin-bottom: 22px;
+        }
+
+        .about_info p.about_bio_text strong {
+            font-weight: 600 !important;
+            color: #000000 !important;
+        }
+
+        .about_info p.about_bio_text em {
+            font-style: italic !important;
+        }
+
+        /* 4. ДОПОМІЖНИЙ БЛОК ДЛЯ ЗМІ * /
+        .press_banner_section {
+            padding: 80px 0;
+            background-color: #111111;
+            color: #ffffff;
+        }
+
         .press_banner_content h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
             font-size: 36px;
             color: #ffffff;
             margin-bottom: 15px;
-            font-weight: 700;
         }
 
         .press_banner_content p {
-            font-size: 18px;
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 16px;
             color: #a9a9a9;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+        }
+
+        .boxed-btn3-gold {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            letter-spacing: 2px !important;
+            color: #ffffff !important;
+            background-color: #c5a059 !important;
+            padding: 14px 32px !important;
+            text-decoration: none !important;
+            display: inline-block;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid #c5a059 !important;
+        }
+
+        .boxed-btn3-gold:hover {
+            background-color: transparent !important;
+            color: #c5a059 !important;
         }
     </style>
 </head>
 
 <body>
+
     <!-- header-start -->
     <header>
         <div class="header-area">
@@ -118,35 +210,50 @@
                 <div class="container-fluid">
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-2">
+                            
+                            <!-- ТЕКСТОВИЙ ЛОГОТИП -->
+                            <div class="col-xl-3 col-lg-3 col-md-4">
                                 <div class="logo">
-                                    <a href="index.html">
-                                        <img src="img/logo.png" alt="Viktoriia Balan">
+                                    <a href="index.html" class="brand_logo_link">
+                                        <span class="brand_name">VIKTORIIA BALAN</span>
+                                        <span class="brand_subtitle">SOPRANO</span>
                                     </a>
                                 </div>
                             </div>
+
+                            <!-- НАВІГАЦІЯ -->
                             <div class="col-xl-6 col-lg-7">
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="index.html">Home</a></li>
                                             <li><a class="active" href="about.html">About</a></li>
-                                            <li><a href="track.html">Repertoire & Tracks</a></li>
-                                            <li><a href="blog.html">News & Press</a></li>
+                                            <li><a href="track.html">Repertoire</a></li>
+                                            <li><a href="blog.html">Press & News</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+
+                            <!-- СОЦМЕРЕЖІ -->
+                            <div class="col-xl-3 col-lg-2 d-none d-lg-block">
                                 <div class="social_icon text-right">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                        <li>
+                                            <a href="https://www.facebook.com/viktoriia.balan.soprano" target="_blank" rel="noopener noreferrer">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.instagram.com/viktoriia.balan.soprano" target="_blank" rel="noopener noreferrer">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
+
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
@@ -158,50 +265,41 @@
     </header>
     <!-- header-end -->
 
-    <!-- bradcam_area -->
-    <div class="bradcam_area breadcam_bg_2 hero_style">
-        <div class="bradcam_overlay_text">About</div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="bradcam_text text-center">
-                        <h3>Viktoriia Balan</h3>
-                        <p class="text-white mt-2" style="font-size: 20px; letter-spacing: 2px;">Ukrainian Lirico-Spinto Soprano</p>
-                    </div>
-                </div>
-            </div>
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider d-flex align-items-center custom_hero_bg">
         </div>
     </div>
-    <!--/ bradcam_area  -->
+    <!-- slider_area_end -->
 
-    <!-- detailed about_area  -->
-    <div class="about_area" style="padding-top: 100px; padding-bottom: 80px;">
+    <!-- about_area_start -->
+    <div class="about_area">
         <div class="container">
             <div class="row align-items-start">
                 <div class="col-xl-5 col-md-6 mb-4">
-                    <div class="about_thumb" style="position: sticky; top: 100px;">
+                    <div class="about_thumb" style="position: sticky; top: 110px;">
                         <img class="img-fluid rounded" src="img/about/about_1.png" alt="Viktoriia Balan Soprano">
                     </div>
                 </div>
                 <div class="col-xl-7 col-md-6">
                     <div class="about_info">
-                        <span class="sub_title">Artistic Biography</span>
-                        <h3 class="mb-4" style="font-size: 38px;">Viktoriia Balan</h3>
                         
-                        <p>
-                            Viktoriia Balan is a Ukrainian lirico-spinto soprano based in Italy, acclaimed for her rich vocal timbre, dramatic flexibility, and commanding artistic maturity across the Italian romantic and verismo repertoires.
+                        <!-- Вступна цитата -->
+                        <blockquote class="about_featured_quote">
+                            <span class="quote_highlight">Viktoriia Balan</span> is a Ukrainian lirico-spinto soprano based in Italy, acclaimed for her rich vocal timbre, dramatic flexibility, and commanding artistic maturity across the Italian romantic and verismo repertoires.
+                        </blockquote>
+
+                        <!-- Суцільний зв'язний текст біографії -->
+                        <p class="about_bio_text">
+                            Her operatic career has seen her perform demanding leading roles on notable international stages. She performed as <strong>Lady Macbeth</strong> in Verdi's <em>Macbeth</em> at the Teatro Lirico Sperimentale di Spoleto "A. Belli" in Italy and at the Longborough Festival Opera in the United Kingdom. Her operatic portrayals also include the lead role in the contemporary opera <em>La Democrazia in Sussulto</em> in Spoleto, <strong>La Contessa</strong> in Mozart's <em>Le nozze di Figaro</em> at Teatro Mancinelli in Orvieto, <strong>Anna</strong> in Zandonai's <em>I cavalieri di Ekebù</em> at Teatro Zandonai in Rovereto, and <strong>Clotilde</strong> in Bellini's <em>Norma</em> at Teatro Sociale di Trento. Earlier in her career, she performed extensively as a soprano soloist in sacred and concert repertoire, including Rossini's <em>Stabat Mater</em> and Mozart's <em>Requiem</em> with the Odesa Philharmonic Society.
                         </p>
 
-                        <p>
-                            Her operatic career has seen her perform demanding leading roles on notable international stages. She performed as Lady Macbeth in Verdi's <i>Macbeth</i> at the Teatro Lirico Sperimentale di Spoleto "A. Belli" in Italy and at the Longborough Festival Opera in the United Kingdom. Her operatic portrayals also include the lead role in the contemporary opera <i>La Democrazia in Sussulto</i> in Spoleto, La Contessa in Mozart's <i>Le nozze di Figaro</i> at Teatro Mancinelli in Orvieto, Anna in Zandonai's <i>I cavalieri di Ekebù</i> at Teatro Zandonai in Rovereto, and Clotilde in Bellini's <i>Norma</i> at Teatro Sociale di Trento. Earlier in her career, she performed extensively as a soprano soloist in sacred and concert repertoire, including Rossini's <i>Stabat Mater</i> and Mozart's <i>Requiem</i> with the Odesa Philharmonic Society.
+                        <p class="about_bio_text">
+                            Viktoriia's vocal excellence has been recognized with top prizes at major international singing competitions. She emerged as the <strong>Winner of the 78th European Community Competition for Young Opera Singers</strong> organized by the Teatro Lirico Sperimentale "A. Belli" in Spoleto. Additionally, she was awarded <strong>1st Prize</strong> at the XXIX International Opera Competition "Spazio Musica" in Orvieto, <strong>1st Prize</strong> at the International Opera Competition "Franco Bonisolli" in Rovereto, Winner of the "Trofeo La Fenice" International Vocal Competition in Seravezza, and 3rd Prize at the Concorso Lirico Internazionale "Città di Riva del Garda".
                         </p>
 
-                        <p>
-                            Viktoriia's vocal excellence has been recognized with top prizes at major international singing competitions. She emerged as the Winner of the 78th European Community Competition for Young Opera Singers organized by the Teatro Lirico Sperimentale "A. Belli" in Spoleto. Additionally, she was awarded 1st Prize at the XXIX International Opera Competition "Spazio Musica" in Orvieto, 1st Prize at the International Opera Competition "Franco Bonisolli" in Rovereto, Winner of the "Trofeo La Fenice" International Vocal Competition in Seravezza, and 3rd Prize at the Concorso Lirico Internazionale "Città di Riva del Garda".
-                        </p>
-
-                        <p>
-                            Her formal musical education spans advanced studies in both Italy and Ukraine. She earned her Master's Degree in Opera Singing from the Conservatorio F. A. Bonporti in Trento, Italy, under the guidance of Prof. M. L. Sanchez. Prior to her studies in Italy, she completed a Master's Degree in Solo Singing & Vocal Pedagogy (With Distinction) as well as her Bachelor's Degree in Solo Singing at the A. V. Nezhdanova Odesa National Academy of Music in Ukraine under Prof. N. S. Yutesh. Her musical foundation began with a Diploma in Choral Conducting from the S. Gulak-Artemovsky College of Music in Cherkasy.
+                        <p class="about_bio_text">
+                            Her formal musical education spans advanced studies in both Italy and Ukraine. She earned her Master's Degree in Opera Singing from the <strong>Conservatorio F. A. Bonporti</strong> in Trento, Italy, under the guidance of Prof. M. L. Sanchez. Prior to her studies in Italy, she completed a Master's Degree in Solo Singing & Vocal Pedagogy (With Distinction) as well as her Bachelor's Degree in Solo Singing at the <strong>A. V. Nezhdanova Odesa National Academy of Music</strong> in Ukraine under Prof. N. S. Yutesh. Her musical foundation began with a Diploma in Choral Conducting from the S. Gulak-Artemovsky College of Music in Cherkasy.
                         </p>
 
                         <div class="signature mt-4">
@@ -212,7 +310,7 @@
             </div>
         </div>
     </div>
-    <!--/ about_area  -->
+    <!-- about_area_end -->
 
     <!-- press_banner_section -->
     <div class="press_banner_section text-center">
@@ -222,7 +320,7 @@
                     <div class="press_banner_content">
                         <h3>Press Reviews & Media Features</h3>
                         <p>Explore critical reviews, newspaper articles, and interview features covering Viktoriia's latest performances and competition victories.</p>
-                        <a href="blog.html" class="boxed-btn3">Read Press & News</a>
+                        <a href="blog.html" class="boxed-btn3-gold">Read Press & News</a>
                     </div>
                 </div>
             </div>
@@ -231,13 +329,13 @@
     <!--/ press_banner_section -->
 
     <!-- contact_rsvp -->
-    <div class="contact_rsvp">
+    <div class="contact_rsvp" style="padding: 70px 0; background-color: #1a1a1a;">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="text text-center">
-                        <h3>For Engagements & Booking</h3>
-                        <a class="boxed-btn3" href="contact.html">Contact Viktoriia</a>
+                        <h3 style="color: #ffffff; font-family: 'Cormorant Garamond', serif; font-size: 32px; margin-bottom: 20px;">For Engagements & Booking</h3>
+                        <a class="boxed-btn3-gold" href="contact.html">Contact Viktoriia</a>
                     </div>
                 </div>
             </div>
@@ -252,9 +350,7 @@
                 <div class="row">
                     <div class="col-xl-6 col-md-6">
                         <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Stay Updated
-                            </h3>
+                            <h3 class="footer_title">Stay Updated</h3>
                             <div class="subscribe-from">
                                 <form action="#">
                                     <input type="text" placeholder="Enter your email">
@@ -266,9 +362,7 @@
                     </div>
                     <div class="col-xl-5 col-md-5 offset-xl-1">
                         <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Contact Me
-                            </h3>
+                            <h3 class="footer_title">Contact Me</h3>
                             <ul>
                                 <li><a href="mailto:VIKTORIIAB16@GMAIL.COM">VIKTORIIAB16@GMAIL.COM</a></li>
                                 <li><a href="tel:+393270725309">+39 327 072 5309</a></li>
@@ -276,9 +370,8 @@
                             </ul>
                             <div class="socail_links">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                    <li><a href="https://www.facebook.com/viktoriia.balan.soprano" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://www.instagram.com/viktoriia.balan.soprano" target="_blank"><i class="fa fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -309,7 +402,7 @@
             </div>
         </div>
     </footer>
-    <!--/ footer end  -->
+    <!--/ footer end -->
 
     <!-- JS here -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
@@ -339,11 +432,6 @@
     <script src="js/mail-script.js"></script>
     <script src="js/main.js"></script>
 
-    <script>
-        $(function() {
-            $('audio').audioPlayer();
-        });
-    </script>
 </body>
 
 </html>
