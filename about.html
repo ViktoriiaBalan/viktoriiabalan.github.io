@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Viktoriia Balan | Biography</title>
-    <meta name="description" content="Official biography and artistic career of Viktoriia Balan - Ukrainian lirico-spinto soprano ">
+    <title>Viktoriia Balan | About</title>
+    <meta name="description" content="Official biography and artistic career of Viktoriia Balan - Ukrainian lirico-spinto soprano based in Italy.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
@@ -48,10 +48,8 @@
             top: 0 !important;
             left: 0 !important;
             width: 100% !important;
-            background-color: rgba(0, 0, 0, 0.9) !important; /* Фіксований темний фон */
+            background-color: rgba(0, 0, 0, 0.9) !important;
             backdrop-filter: blur(5px);
-            
-            /* Вимикаємо трансформації та анімації */
             animation: none !important;
             transition: none !important;
             transform: none !important;
@@ -82,7 +80,7 @@
             font-family: 'Montserrat', sans-serif !important;
             font-size: 10px !important;
             font-weight: 400 !important;
-            color: #c5a059 !important; /* Золотистий відтінок */
+            color: #c5a059 !important;
             letter-spacing: 4px !important;
             text-transform: uppercase;
             margin-top: 5px;
@@ -92,7 +90,7 @@
             color: #c5a059 !important;
         }
 
-        /* 2. НАЛАШТУВАННЯ БАННЕРА (Збережено ваші параметри позиціонування) */
+        /* 2. НАЛАШТУВАННЯ БАННЕРА ТА НАДПИСУ "ABOUT" */
         .custom_hero_bg {
             background-image: url('img/hero2.jpg');
             background-size: cover;
@@ -100,8 +98,10 @@
             background-repeat: no-repeat !important;
             min-height: 85vh;
             display: flex;
-            align-items: center;
+            align-items: flex-end; /* Вирівнюємо вміст донизу */
+            justify-content: center;
             position: relative;
+            padding-bottom: 50px; /* Відступ від самого низу */
         }
 
         .custom_hero_bg::before {
@@ -111,42 +111,46 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%);
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.6) 100%);
             z-index: 1;
         }
 
-        /* 3. ВИДІЛЕННЯ ГОЛОВНОЇ ЦИТАТИ ТА СТИЛІ БІОГРАФІЇ */
+        /* Стиль надпису About поверх банера */
+        .hero_banner_title {
+            position: relative;
+            z-index: 2;
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 56px !important;
+            font-weight: 500 !important;
+            color: #ffffff !important;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        /* 3. СТИЛІ БІОГРАФІЇ */
         .about_area {
             background-color: #ffffff;
-            padding: 90px 0;
+            padding: 80px 0 90px 0;
         }
 
-        .about_info .about_featured_quote {
+        .about_info h2.bio_title {
             font-family: 'Cormorant Garamond', Georgia, serif !important;
-            font-size: 30px !important;
-            line-height: 1.4 !important;
-            font-weight: 600 !important;
-            font-style: italic !important;
-            color: #111111 !important;
-            margin: 0 0 30px 0;
-            padding: 5px 0 5px 22px;
-            border: none;
-            border-left: 3px solid #c5a059 !important; /* Золота вертикальна лінія */
-            position: relative;
-        }
-
-        .about_info .about_featured_quote .quote_highlight {
-            color: #a37c3f !important;
-            font-weight: 700 !important;
+            font-size: 38px;
+            font-weight: 600;
+            color: #111111;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
         .about_info p.about_bio_text {
             font-family: 'Montserrat', sans-serif !important;
-            font-size: 15.5px !important;
-            line-height: 1.85 !important;
+            font-size: 16px !important;
+            line-height: 1.9 !important;
             color: #2c2c2c !important;
             font-weight: 400;
-            margin-bottom: 22px;
+            margin-bottom: 24px;
         }
 
         .about_info p.about_bio_text strong {
@@ -158,7 +162,7 @@
             font-style: italic !important;
         }
 
-        /* 4. ДОПОМІЖНИЙ БЛОК ДЛЯ ЗМІ * /
+        /* 4. ДОПОМІЖНІ КНОПКИ ТА СЕКЦІЇ */
         .press_banner_section {
             padding: 80px 0;
             background-color: #111111;
@@ -267,7 +271,9 @@
 
     <!-- slider_area_start -->
     <div class="slider_area">
-        <div class="single_slider d-flex align-items-center custom_hero_bg">
+        <div class="single_slider custom_hero_bg">
+            <!-- Надпис "About", розміщений внизу банера -->
+            <h1 class="hero_banner_title">About</h1>
         </div>
     </div>
     <!-- slider_area_end -->
@@ -275,21 +281,16 @@
     <!-- about_area_start -->
     <div class="about_area">
         <div class="container">
-            <div class="row align-items-start">
-                <div class="col-xl-5 col-md-6 mb-4">
-                    <div class="about_thumb" style="position: sticky; top: 110px;">
-                        <img class="img-fluid rounded" src="img/about/about_1.png" alt="Viktoriia Balan Soprano">
-                    </div>
-                </div>
-                <div class="col-xl-7 col-md-6">
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-11">
                     <div class="about_info">
                         
-                        <!-- Вступна цитата -->
-                        <blockquote class="about_featured_quote">
-                            <span class="quote_highlight">Viktoriia Balan</span> is a Ukrainian lirico-spinto soprano based in Italy, acclaimed for her rich vocal timbre, dramatic flexibility, and commanding artistic maturity across the Italian romantic and verismo repertoires.
-                        </blockquote>
+                        <h2 class="bio_title">Biography</h2>
 
-                        <!-- Суцільний зв'язний текст біографії -->
+                        <p class="about_bio_text">
+                            <strong>Viktoriia Balan</strong> is a Ukrainian lirico-spinto soprano based in Italy, acclaimed for her rich vocal timbre, dramatic flexibility, and commanding artistic maturity across the Italian romantic and verismo repertoires.
+                        </p>
+
                         <p class="about_bio_text">
                             Her operatic career has seen her perform demanding leading roles on notable international stages. She performed as <strong>Lady Macbeth</strong> in Verdi's <em>Macbeth</em> at the Teatro Lirico Sperimentale di Spoleto "A. Belli" in Italy and at the Longborough Festival Opera in the United Kingdom. Her operatic portrayals also include the lead role in the contemporary opera <em>La Democrazia in Sussulto</em> in Spoleto, <strong>La Contessa</strong> in Mozart's <em>Le nozze di Figaro</em> at Teatro Mancinelli in Orvieto, <strong>Anna</strong> in Zandonai's <em>I cavalieri di Ekebù</em> at Teatro Zandonai in Rovereto, and <strong>Clotilde</strong> in Bellini's <em>Norma</em> at Teatro Sociale di Trento. Earlier in her career, she performed extensively as a soprano soloist in sacred and concert repertoire, including Rossini's <em>Stabat Mater</em> and Mozart's <em>Requiem</em> with the Odesa Philharmonic Society.
                         </p>
@@ -299,12 +300,11 @@
                         </p>
 
                         <p class="about_bio_text">
-                            Her formal musical education spans advanced studies in both Italy and Ukraine. She earned her Master's Degree in Opera Singing from the <strong>Conservatorio F. A. Bonporti</strong> in Trento, Italy, under the guidance of Prof. M. L. Sanchez. Prior to her studies in Italy, she completed a Master's Degree in Solo Singing & Vocal Pedagogy (With Distinction) as well as her Bachelor's Degree in Solo Singing at the <strong>A. V. Nezhdanova Odesa National Academy of Music</strong> in Ukraine under Prof. N. S. Yutesh. Her musical foundation began with a Diploma in Choral Conducting from the S. Gulak-Artemovsky College of Music in Cherkasy.
-                        </p>
-
-                        <div class="signature mt-4">
+                            Her formal musical education spans advanced studies in both Italy and Ukraine. She earned her Master's Degree in Opera Singing and Vocal Pedagogy from the <strong>Odesa National Academy of Music</strong> in Odesa, Ukraine. After moving to Italy, she continued her education at Masterclasses with Daniela Barcellona and Alessandro Vitiello, Raina Kabaivansa and Mascagni Academy.
+                        <div class="signature text-center mt-5">
                             <img src="img/about/signature.png" alt="Viktoriia Balan Signature">
                         </div>
+
                     </div>
                 </div>
             </div>
