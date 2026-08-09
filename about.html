@@ -90,20 +90,19 @@
             color: #c5a059 !important;
         }
 
-        /* 2. НАЛАШТУВАННЯ БАННЕРА ТА НАДПИСУ "ABOUT" ПО ЦЕНТРУ */
+        /* 2. АДАПТОВАНІ СТИЛІ БАННЕРА ДЛЯ ВЕРТИКАЛЬНОГО ФОТО (hero6.jpg) */
         .custom_hero_bg {
-            background-image: url('img/hero5.jpg');
-            background-size: cover;
-            background-position: center !important;
-            background-repeat: no-repeat !important;
+            position: relative;
             min-height: 85vh;
             display: flex;
-            align-items: center; /* Центрування по вертикалі */
-            justify-content: center; /* Центрування по горизонталі */
-            position: relative;
-            padding-top: 80px; /* Компенсація висоти фіксованого хедера */
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 80px;
+            background-color: #000000;
         }
 
+        /* М'яко розмитий та затемнений фон для заповнення країв */
         .custom_hero_bg::before {
             content: "";
             position: absolute;
@@ -111,14 +110,43 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.6) 100%);
+            background-image: url('hero6.jpg'); /* Переконайтеся в правильності шляху, наприклад img/hero6.jpg за потреби */
+            background-size: cover;
+            background-position: center 30%;
+            filter: blur(25px) brightness(0.4);
+            transform: scale(1.1);
             z-index: 1;
         }
 
-        /* Стиль надпису About поверх банера (зсув вгору) */
+        /* Чітке фото по центру без обрізання та спотворень */
+        .hero_main_image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('hero6.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            z-index: 2;
+        }
+
+        /* Градієнтне затемнення для кращої читабельності тексту */
+        .hero_overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+            z-index: 3;
+        }
+
+        /* Стиль надпису About поверх банера */
         .hero_banner_title {
             position: relative;
-            z-index: 2;
+            z-index: 4;
             font-family: 'Cormorant Garamond', Georgia, serif !important;
             font-size: 56px !important;
             font-weight: 500 !important;
@@ -126,10 +154,10 @@
             letter-spacing: 6px;
             text-transform: uppercase;
             margin: 0;
-            transform: translateY(-90px); /* ПІДНІМАЄ НАДПИС ВГОРУ НАД ОЧИМА */
+            transform: translateY(-40px);
             text-align: center;
             width: 100%;
-            text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+            text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.9);
         }
 
         /* 3. СТИЛІ БІОГРАФІЇ */
@@ -225,8 +253,8 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a class="active" href="repertoire.html">Repertoire</a></li>
+                                            <li><a class="active" href="about.html">About</a></li>
+                                            <li><a href="repertoire.html">Repertoire</a></li>
                                             <li><a href="press.html">Press</a></li>
                                             <li><a href="#">Media <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
@@ -278,6 +306,8 @@
     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="single_slider custom_hero_bg">
+            <div class="hero_main_image"></div>
+            <div class="hero_overlay"></div>
             <!-- Надпис "About", розміщений по центру банера -->
             <h1 class="hero_banner_title">About</h1>
         </div>
