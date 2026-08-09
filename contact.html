@@ -88,7 +88,7 @@
             color: #c5a059 !important;
         }
 
-        /* ВЕРХНІЙ БАННЕР СТОРІНКИ (BRADCAM) */
+        /* ВЕРХНІЙ БАННЕР СТОРІНКИ */
         .bradcam_area {
             padding: 180px 0 80px 0;
             background-color: #111111;
@@ -294,7 +294,11 @@
                 
                 <!-- КОНТАКТНА ФОРМА -->
                 <div class="col-lg-8 mb-5 mb-lg-0">
-                    <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm">
+                    <form class="form-contact contact_form" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                        
+                        <!-- ВАШ КЛЮЧ WEB3FORMS -->
+                        <input type="hidden" name="access_key" value="0c554894-9b57-4169-aafd-8ce00fec2821">
+
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
@@ -329,7 +333,7 @@
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-email"></i></span>
                         <div class="media-body">
-                            <h3><a href="mailto:viktoriiab16@gmail.com" style="color: inherit;">viktoriiab16@gmail.com</a></h3>
+                            <h3><a href="mailto:vampiru4ka@gmail.com" style="color: inherit;">vampiru4ka@gmail.com</a></h3>
                             <p>Get in touch for future collaborations and appearances.</p>
                         </div>
                     </div>
@@ -389,7 +393,7 @@
     <script src="js/gijgo.min.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- Скрипт відправки форми -->
+    <!-- СКРИПТ ВІДПРАВКИ ФОРМИ ЧЕРЕЗ WEB3FORMS -->
     <script>
         $(document).ready(function() {
             $('#contactForm').on('submit', function(e) {
@@ -403,12 +407,18 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: $(this).attr('action'),
+                    url: 'https://api.web3forms.com/submit',
                     data: $(this).serialize(),
+                    dataType: 'json',
                     success: function(response) {
-                        $btn.prop('disabled', false).text('Send Message');
-                        $status.css('color', '#28a745').text('Your message has been sent successfully!');
-                        $('#contactForm')[0].reset();
+                        if (response.success) {
+                            $btn.prop('disabled', false).text('Send Message');
+                            $status.css('color', '#28a745').text('Your message has been sent successfully!');
+                            $('#contactForm')[0].reset();
+                        } else {
+                            $btn.prop('disabled', false).text('Send Message');
+                            $status.css('color', '#dc3545').text('Something went wrong. Please try again.');
+                        }
                     },
                     error: function() {
                         $btn.prop('disabled', false).text('Send Message');
