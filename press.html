@@ -125,80 +125,82 @@
             letter-spacing: 6px;
             text-transform: uppercase;
             margin: 0;
-            transform: translateY(-160px); /* Піднято на -160px за вашим вибором */
+            transform: translateY(-160px);
             text-align: center;
             width: 100%;
             text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
         }
         
-        /* 3. СТИЛІ СЕКЦІЇ ПРЕСИ */
+        /* 3. СТИЛІ СЕКЦІЇ ПРЕСИ (ДВІ КОЛОНКИ) */
         .press_area {
             background-color: #ffffff;
             padding: 80px 0 90px 0;
         }
 
-        .role_section_title {
+        .role_column_header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #c5a059;
         }
 
-        .role_section_title h2 {
+        .role_column_header h2 {
             font-family: 'Cormorant Garamond', Georgia, serif !important;
-            font-size: 42px !important;
+            font-size: 38px !important;
             font-weight: 600;
             color: #111111;
             margin-bottom: 5px;
             letter-spacing: 1px;
         }
 
-        .role_section_title h4 {
+        .role_column_header h4 {
             font-family: 'Montserrat', sans-serif !important;
-            font-size: 13px !important;
+            font-size: 11px !important;
             font-weight: 600;
             color: #c5a059;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             margin: 0;
+            line-height: 1.5;
         }
 
         .quote_card {
             background: #fdfdfd;
             border-left: 3px solid #c5a059;
-            padding: 30px 35px;
-            margin-bottom: 35px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            padding: 25px 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             transition: all 0.3s ease;
         }
 
         .quote_card:hover {
-            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
             transform: translateY(-2px);
         }
 
         .quote_text {
             font-family: 'Cormorant Garamond', Georgia, serif !important;
-            font-size: 21px !important;
+            font-size: 19px !important;
             line-height: 1.6 !important;
             color: #2c2c2c !important;
             font-style: italic;
-            margin-bottom: 15px;
-            position: relative;
+            margin-bottom: 12px;
         }
 
         .quote_text_original {
             font-family: 'Cormorant Garamond', Georgia, serif !important;
-            font-size: 18px !important;
+            font-size: 17px !important;
             line-height: 1.5 !important;
             color: #666666 !important;
             font-style: italic;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             padding-top: 10px;
             border-top: 1px dashed #e5e5e5;
         }
 
         .quote_author {
             font-family: 'Montserrat', sans-serif !important;
-            font-size: 11px !important;
+            font-size: 10px !important;
             font-weight: 600 !important;
             color: #111111 !important;
             text-transform: uppercase;
@@ -212,19 +214,13 @@
         .quote_author::before {
             content: "";
             display: inline-block;
-            width: 20px;
+            width: 15px;
             height: 1px;
             background-color: #c5a059;
-            margin-right: 10px;
+            margin-right: 8px;
         }
 
-        .section_divider {
-            height: 1px;
-            background: linear-gradient(90deg, rgba(197,160,89,0) 0%, rgba(197,160,89,0.5) 50%, rgba(197,160,89,0) 100%);
-            margin: 60px 0;
-        }
-
-        /* 4. ДОПОМІЖНІ КНОПКИ ТА СЕКЦІЇ */
+        /* 4. ДОПОМІЖНІ КНОПКИ */
         .boxed-btn3-gold {
             font-family: 'Montserrat', sans-serif !important;
             font-size: 11px !important;
@@ -341,18 +337,16 @@
 
     <!-- press_area_start -->
     <div class="press_area">
-        <div class="container">
-            
-            <!-- SECTION 1: LADY MACBETH -->
-            <div class="row justify-content-center">
-                <div class="col-xl-10 col-lg-11">
-                    
-                    <div class="role_section_title">
+        <div class="container-fluid" style="max-width: 1400px;">
+            <div class="row">
+                
+                <!-- КОЛОНКА 1: LADY MACBETH -->
+                <div class="col-lg-6 col-md-12 pr-lg-4">
+                    <div class="role_column_header">
                         <h2>Lady Macbeth</h2>
-                        <h4>Giuseppe Verdi — Macbeth | Longborough Festival Opera, UK (2026)</h4>
+                        <h4>Giuseppe Verdi — Macbeth<br>Longborough Festival Opera, UK (2026)</h4>
                     </div>
 
-                    <!-- Quote 1 -->
                     <div class="quote_card">
                         <p class="quote_text">
                             “In the challenging spinto soprano role of Lady Macbeth, Viktoriia Balan is a revelation. Her forays into the highest registers of her voice are thrilling, and her final 'mad' scene is full of pathos.”
@@ -360,7 +354,6 @@
                         <p class="quote_author">Inge Kjemtrup, The Stage</p>
                     </div>
 
-                    <!-- Quote 2 -->
                     <div class="quote_card">
                         <p class="quote_text">
                             “This production benefits from some outstanding singers, chief of which is Ukrainian soprano Viktoriia Balan as Lady Macbeth making her Longborough debut. She perfectly matches Verdi's requirement for his femme fatale to have 'the voice of a devil'. She commands the stage and fearlessly dispatches Verdi's formidable challenges, richly dark below the stave and scorching when delivering a high D flat in her 'Una macchia è qui tuttora!' Self-possessed, she bestrides the stage in a black leather coat giving faint hints of a dominatrix, her 'Brindisi' wonderfully rousing.”
@@ -368,7 +361,6 @@
                         <p class="quote_author">David Truslove, Opera Today</p>
                     </div>
 
-                    <!-- Quote 3 -->
                     <div class="quote_card">
                         <p class="quote_text">
                             “Viktoriia Balan's company debut is a triumph. Lady Macbeth is one of Verdi's most demanding creations, requiring not simply vocal stamina but complete dramatic conviction, and Balan delivers both. The voice combines warmth, richness and thrilling brilliance across its range, but what impresses most is the intelligence behind the singing. Every phrase has dramatic purpose... Balan's performance charts the character's psychological disintegration with unwavering authority. It is the sort of debut that immediately marks out a singer to watch.”
@@ -376,7 +368,6 @@
                         <p class="quote_author">Mike Smith, OperaScene</p>
                     </div>
 
-                    <!-- Quote 4 -->
                     <div class="quote_card">
                         <p class="quote_text">
                             “Viktoriia Balan's gleefully sadistic Lady Macbeth. It must be one of the most fun roles to play in the canon and Balan lapped up sneer with sinister ease. An electric chemistry with Stone's Macbeth, she feels genuinely dangerous... There is a real focussed power behind the voice coupled with a tactile grasp of the Italian text: a very, very engaging and exciting performance.”
@@ -384,7 +375,6 @@
                         <p class="quote_author">Jonathan Whiting, Opera Now</p>
                     </div>
 
-                    <!-- Quote 5 -->
                     <div class="quote_card">
                         <p class="quote_text">
                             “As Lady Macbeth, Viktoriia Balan delivers an exceptional performance both vocally and dramatically. She makes one of Verdi's most demanding soprano roles appear deceptively effortless. Ambizioso spirto, with its treacherous coloratura, extreme dynamic contrasts and relentless vocal demands, is sung with complete assurance. The sleepwalking scene proves even more remarkable... Her richly coloured voice and commanding stage presence make for a memorable Lady Macbeth.”
@@ -392,7 +382,6 @@
                         <p class="quote_author">Josi Steinfeld, Plays To See</p>
                     </div>
 
-                    <!-- Quote 6 -->
                     <div class="quote_card">
                         <p class="quote_text">
                             “Viktoriia Balan was an outstanding Lady Macbeth, who revealed a sumptuous soprano that was possessed of a certain edge that worked perfectly for the role. Her transformation from the person who seemed almost too good at keeping any guilt in check, to one who was completely lost to madness, felt convincing.”
@@ -400,7 +389,6 @@
                         <p class="quote_author">Sam Smith, MusicOMH</p>
                     </div>
 
-                    <!-- Quote 7 -->
                     <div class="quote_card">
                         <p class="quote_text">
                             “Two rising stars took the plaudits on opening night of Longborough's first-ever production of Verdi's Macbeth. Soprano, Viktoriia Balan made a stunning debut in the role of Lady Macbeth. With her glorious soprano voice she is an instant success... The star, the very talented soprano, Viktoriia Balan, makes a lovely pairing with baritone Stone...”
@@ -408,7 +396,6 @@
                         <p class="quote_author">Clive Peacock, Seen and Heard International</p>
                     </div>
 
-                    <!-- Quote 8 -->
                     <div class="quote_card">
                         <p class="quote_text">
                             “Viktoriia Balan makes a stirring impression as a forceful Lady Macbeth with an iron will, though also able to modify her temperament convincingly to coax or goad as needs be, demonstrating firmly that she wears the trousers.”
@@ -416,29 +403,21 @@
                         <p class="quote_author">Curtis Rogers, Classical Source</p>
                     </div>
 
-                    <!-- Quote 9 -->
                     <div class="quote_card">
                         <p class="quote_text">
                             “...with Ukrainian soprano Viktoriia Balan spirited and extremely well sung as Lady Macbeth.”
                         </p>
                         <p class="quote_author">Mark Ronan, The Article</p>
                     </div>
-
                 </div>
-            </div>
 
-            <div class="section_divider"></div>
-
-            <!-- SECTION 2: ANNA -->
-            <div class="row justify-content-center">
-                <div class="col-xl-10 col-lg-11">
-                    
-                    <div class="role_section_title">
+                <!-- КОЛОНКА 2: ANNA -->
+                <div class="col-lg-6 col-md-12 pl-lg-4 mt-5 mt-lg-0">
+                    <div class="role_column_header">
                         <h2>Anna</h2>
-                        <h4>Riccardo Zandonai — I Cavalieri di Ekebù | Teatro Zandonai, Rovereto, Italy</h4>
+                        <h4>Riccardo Zandonai — I Cavalieri di Ekebù<br>Teatro Zandonai, Rovereto, Italy</h4>
                     </div>
 
-                    <!-- Quote 1 -->
                     <div class="quote_card">
                         <p class="quote_text">
                             “The two leading ladies were particularly outstanding: Viktoriia Balan endowed Anna with a bright and incisive vocal timbre.”
@@ -449,7 +428,6 @@
                         <p class="quote_author">Stefano Nardelli, Il Giornale della Musica</p>
                     </div>
 
-                    <!-- Quote 2 -->
                     <div class="quote_card">
                         <p class="quote_text">
                             “The entire cast met the considerable demands of their roles. Particularly compelling was Viktoriia Balan's Anna, sung with heartfelt emotion, a beautifully lustrous tone and assured musicianship.”
@@ -460,7 +438,6 @@
                         <p class="quote_author">Federica Fanizza, ArtesNews</p>
                     </div>
 
-                    <!-- Quote 3 -->
                     <div class="quote_card">
                         <p class="quote_text">
                             “In the second performance, Anna was interpreted by soprano Viktoriia Balan with an ideal lyrical impulse, a finely shaped musical line and impressive vocal stamina.”
@@ -470,10 +447,9 @@
                         </p>
                         <p class="quote_author">Andrea Merli, I Teatri dell'Est</p>
                     </div>
-
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
     <!-- press_area_end -->
