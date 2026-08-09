@@ -90,7 +90,7 @@
             color: #c5a059 !important;
         }
 
-        /* 2. СТРАТЕГІЯ БАННЕРА З 3 ВЕРТИКАЛЬНИМИ ФОТО */
+        /* 2. СТИЛІ БАННЕРА (3 ВЕРТИКАЛЬНІ ФОТО) */
         .hero_triptych_section {
             position: relative;
             background-color: #080808;
@@ -121,17 +121,17 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: top center; /* Зберігає обличчя зверху */
+            object-position: top center;
             transition: transform 0.6s ease;
-            filter: brightness(0.8);
+            filter: brightness(0.85);
         }
 
         .hero_img_wrapper:hover img {
             transform: scale(1.03);
-            filter: brightness(0.95);
+            filter: brightness(0.98);
         }
 
-        /* Текстовий оверлей поверх фотографій */
+        /* Текстовий оверлей: зміщено донизу */
         .hero_triptych_overlay {
             position: absolute;
             top: 0;
@@ -139,27 +139,29 @@
             width: 100%;
             height: 100%;
             display: flex;
-            align-items: center;
+            align-items: flex-end; /* Зміщує елемент вниз */
             justify-content: center;
-            pointer-events: none; /* Щоб ховер працював на фото під текстом */
+            padding-bottom: 35px; /* Відступ від низу картинки */
+            pointer-events: none;
             z-index: 5;
         }
 
         .hero_banner_title {
             font-family: 'Cormorant Garamond', Georgia, serif !important;
-            font-size: 64px !important;
+            font-size: 52px !important;
             font-weight: 500 !important;
             color: #ffffff !important;
             letter-spacing: 8px;
             text-transform: uppercase;
             margin: 0;
             text-align: center;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.55);
             backdrop-filter: blur(8px);
-            padding: 15px 50px;
+            padding: 12px 45px;
             border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         }
+
         /* 3. СТИЛІ БІОГРАФІЇ */
         .about_area {
             background-color: #ffffff;
@@ -223,6 +225,21 @@
         .boxed-btn3-gold:hover {
             background-color: transparent !important;
             color: #c5a059 !important;
+        }
+
+        /* Мобільна адаптація */
+        @media (max-width: 767px) {
+            .hero_img_wrapper {
+                height: 320px;
+                margin-bottom: 15px;
+            }
+            .hero_banner_title {
+                font-size: 36px !important;
+                padding: 10px 25px;
+            }
+            .hero_triptych_overlay {
+                padding-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -309,7 +326,7 @@
             <div class="row no-gutters justify-content-center align-items-center">
                 <div class="col-md-4 p-2">
                     <div class="hero_img_wrapper">
-                        <img src="img/hero1.jpg" alt="Viktoriia Balan Soprano">
+                        <img src="img/hero3.jpg" alt="Viktoriia Balan Soprano">
                     </div>
                 </div>
                 <div class="col-md-4 p-2">
@@ -325,7 +342,7 @@
             </div>
         </div>
         
-        <!-- Елегантний плаваючий заголовок по центру -->
+        <!-- Заголовок опущенший донизу -->
         <div class="hero_triptych_overlay">
             <h1 class="hero_banner_title">About</h1>
         </div>
