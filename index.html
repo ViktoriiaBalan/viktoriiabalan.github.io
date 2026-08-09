@@ -188,6 +188,45 @@
             background-color: #111111 !important;
             color: #ffffff !important;
         }
+
+        /* 5. МАЗОЇЧНА СІТКА (MASONRY) ДЛЯ ГАЛЕРЕЇ ВЕРТИКАЛЬНИХ ФОТО */
+        .gallery_area .grid {
+            display: block !important;
+            column-count: 3; /* 3 рівні колонки для великих екранів */
+            column-gap: 30px;
+        }
+
+        .gallery_area .grid-item {
+            width: 100% !important;
+            max-width: 100% !important;
+            display: inline-block;
+            margin-bottom: 30px;
+            break-inside: avoid; /* Запобігає розриву картки між колонками */
+        }
+
+        .gallery_area .single-gallery {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery_area .single-gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Адаптивність для планшетів та смартфонів */
+        @media (max-width: 991px) {
+            .gallery_area .grid {
+                column-count: 2; /* 2 колонки для планшетів */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery_area .grid {
+                column-count: 1; /* 1 колонка для мобільних пристроїв */
+            }
+        }
     </style>
 </head>
 
@@ -321,11 +360,11 @@
                 </div>
             </div>
             <div class="row grid">
-                <!-- Верхній ряд: Фото 3 -->
-                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                <!-- Фото 3 -->
+                <div class="grid-item">
                     <div class="single-gallery mb-30">
                         <div class="portfolio-img">
-                            <img class="img-fluid" src="img/gallery/3.jpg" alt="Gallery Photo 3">
+                            <img src="img/gallery/3.jpg" alt="Gallery Photo 3">
                         </div>
                         <div class="gallery_hover">
                             <a class="popup-image hover_inner" href="img/gallery/3.jpg">
@@ -335,11 +374,11 @@
                     </div>
                 </div>
 
-                <!-- Верхній ряд: Фото 4 -->
-                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                <!-- Фото 4 -->
+                <div class="grid-item">
                     <div class="single-gallery mb-30">
                         <div class="portfolio-img">
-                            <img class="img-fluid" src="img/gallery/4.jpg" alt="Gallery Photo 4">
+                            <img src="img/gallery/4.jpg" alt="Gallery Photo 4">
                         </div>
                         <div class="gallery_hover">
                             <a class="popup-image hover_inner" href="img/gallery/4.jpg">
@@ -349,11 +388,11 @@
                     </div>
                 </div>
 
-                <!-- Верхній ряд: Фото 1 -->
-                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                <!-- Фото 1 -->
+                <div class="grid-item">
                     <div class="single-gallery mb-30">
                         <div class="portfolio-img">
-                            <img class="img-fluid" src="img/gallery/1.jpg" alt="Gallery Photo 1">
+                            <img src="img/gallery/1.jpg" alt="Gallery Photo 1">
                         </div>
                         <div class="gallery_hover">
                             <a class="popup-image hover_inner" href="img/gallery/1.jpg">
@@ -363,11 +402,11 @@
                     </div>
                 </div>
 
-                <!-- Нижній ряд: Фото 5 -->
-                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                <!-- Фото 5 -->
+                <div class="grid-item">
                     <div class="single-gallery mb-30">
                         <div class="portfolio-img">
-                            <img class="img-fluid" src="img/gallery/5.jpg" alt="Gallery Photo 5">
+                            <img src="img/gallery/5.jpg" alt="Gallery Photo 5">
                         </div>
                         <div class="gallery_hover">
                             <a class="popup-image hover_inner" href="img/gallery/5.jpg">
@@ -377,11 +416,11 @@
                     </div>
                 </div>
 
-                <!-- Нижній ряд: Фото 6 -->
-                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                <!-- Фото 6 -->
+                <div class="grid-item">
                     <div class="single-gallery mb-30">
                         <div class="portfolio-img">
-                            <img class="img-fluid" src="img/gallery/6.jpg" alt="Gallery Photo 6">
+                            <img src="img/gallery/6.jpg" alt="Gallery Photo 6">
                         </div>
                         <div class="gallery_hover">
                             <a class="popup-image hover_inner" href="img/gallery/6.jpg">
@@ -391,11 +430,11 @@
                     </div>
                 </div>
 
-                <!-- Нижній ряд: Фото 2 -->
-                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                <!-- Фото 2 -->
+                <div class="grid-item">
                     <div class="single-gallery mb-30">
                         <div class="portfolio-img">
-                            <img class="img-fluid" src="img/gallery/2.jpg" alt="Gallery Photo 2">
+                            <img src="img/gallery/2.jpg" alt="Gallery Photo 2">
                         </div>
                         <div class="gallery_hover">
                             <a class="popup-image hover_inner" href="img/gallery/2.jpg">
