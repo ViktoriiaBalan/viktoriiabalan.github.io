@@ -1,0 +1,561 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Viktoriia Balan | Press</title>
+    <meta name="description" content="Press reviews and critical acclaim for Ukrainian soprano Viktoriia Balan.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/audioplayer.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ПОВНЕ БЛОКУВАННЯ БУДЬ-ЯКИХ РУХІВ ШАПКИ ПРИ СКРОЛІ */
+        header {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            z-index: 99999 !important;
+        }
+
+        .header-area,
+        .main-header-area,
+        #sticky-header,
+        .sticky {
+            position: relative !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            background-color: rgba(0, 0, 0, 0.9) !important;
+            backdrop-filter: blur(5px);
+            animation: none !important;
+            transition: none !important;
+            transform: none !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+        }
+
+        /* 1. ЕЛЕГАНТНИЙ ЛОГОТИП У ШАПЦІ */
+        .brand_logo_link {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none !important;
+            padding: 5px 0;
+        }
+
+        .brand_name {
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 26px !important; 
+            font-weight: 600 !important;
+            color: #ffffff !important;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1;
+            transition: color 0.3s ease;
+        }
+
+        .brand_subtitle {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 10px !important;
+            font-weight: 400 !important;
+            color: #c5a059 !important;
+            letter-spacing: 4px !important;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .brand_logo_link:hover .brand_name {
+            color: #c5a059 !important;
+        }
+
+        /* 2. НАЛАШТУВАННЯ БАННЕРА (hero10.jpg) ТА ЗАГОЛОВКА */
+        .custom_hero_bg {
+            background-image: url('img/hero10.jpg');
+            background-size: cover;
+            background-position: center 20% !important;
+            background-repeat: no-repeat !important;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .custom_hero_bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.6) 100%);
+            z-index: 1;
+        }
+
+        .hero_banner_title {
+            position: relative;
+            z-index: 2;
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 56px !important;
+            font-weight: 500 !important;
+            color: #ffffff !important;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin: 0;
+            transform: translateY(-160px); /* Піднято на -160px за вашим вибором */
+            text-align: center;
+            width: 100%;
+            text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+        }
+        
+        /* 3. СТИЛІ СЕКЦІЇ ПРЕСИ */
+        .press_area {
+            background-color: #ffffff;
+            padding: 80px 0 90px 0;
+        }
+
+        .role_section_title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .role_section_title h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 42px !important;
+            font-weight: 600;
+            color: #111111;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .role_section_title h4 {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 13px !important;
+            font-weight: 600;
+            color: #c5a059;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 0;
+        }
+
+        .quote_card {
+            background: #fdfdfd;
+            border-left: 3px solid #c5a059;
+            padding: 30px 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+
+        .quote_card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+            transform: translateY(-2px);
+        }
+
+        .quote_text {
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 21px !important;
+            line-height: 1.6 !important;
+            color: #2c2c2c !important;
+            font-style: italic;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .quote_text_original {
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 18px !important;
+            line-height: 1.5 !important;
+            color: #666666 !important;
+            font-style: italic;
+            margin-bottom: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #e5e5e5;
+        }
+
+        .quote_author {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            color: #111111 !important;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .quote_author::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 1px;
+            background-color: #c5a059;
+            margin-right: 10px;
+        }
+
+        .section_divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(197,160,89,0) 0%, rgba(197,160,89,0.5) 50%, rgba(197,160,89,0) 100%);
+            margin: 60px 0;
+        }
+
+        /* 4. ДОПОМІЖНІ КНОПКИ ТА СЕКЦІЇ */
+        .boxed-btn3-gold {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            letter-spacing: 2px !important;
+            color: #ffffff !important;
+            background-color: #c5a059 !important;
+            padding: 14px 32px !important;
+            text-decoration: none !important;
+            display: inline-block;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid #c5a059 !important;
+        }
+
+        .boxed-btn3-gold:hover {
+            background-color: transparent !important;
+            color: #c5a059 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            
+                            <!-- ТЕКСТОВИЙ ЛОГОТИП -->
+                            <div class="col-xl-3 col-lg-3 col-md-4">
+                                <div class="logo">
+                                    <a href="index.html" class="brand_logo_link">
+                                        <span class="brand_name">VIKTORIIA BALAN</span>
+                                        <span class="brand_subtitle">SOPRANO</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- ОНОВЛЕНЕ НАВІГАЦІЙНЕ МЕНЮ -->
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="main-menu d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="repertoire.html">Repertoire</a></li>
+                                            <li><a class="active" href="press.html">Press</a></li>
+                                            <li><a href="#">Media <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="photos.html">Photos</a></li>
+                                                    <li><a href="videos.html">Videos</a></li>
+                                                    <li><a href="audio.html">Audio</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <!-- СОЦМЕРЕЖІ -->
+                            <div class="col-xl-3 col-lg-2 d-none d-lg-block">
+                                <div class="social_icon text-right">
+                                    <ul>
+                                        <li>
+                                            <a href="https://www.facebook.com/viktoriia.balan.soprano" target="_blank" rel="noopener noreferrer">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.instagram.com/viktoriia.balan.soprano" target="_blank" rel="noopener noreferrer">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.youtube.com/@viktoriia_balan" target="_blank" rel="noopener noreferrer">
+                                                <i class="fa fa-youtube-play"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider custom_hero_bg">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-10 font-pt">
+                        <div class="slider_text text-center">
+                            <h1 class="hero_banner_title">Press</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- press_area_start -->
+    <div class="press_area">
+        <div class="container">
+            
+            <!-- SECTION 1: LADY MACBETH -->
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-11">
+                    
+                    <div class="role_section_title">
+                        <h2>Lady Macbeth</h2>
+                        <h4>Giuseppe Verdi — Macbeth | Longborough Festival Opera, UK (2026)</h4>
+                    </div>
+
+                    <!-- Quote 1 -->
+                    <div class="quote_card">
+                        <p class="quote_text">
+                            “In the challenging spinto soprano role of Lady Macbeth, Viktoriia Balan is a revelation. Her forays into the highest registers of her voice are thrilling, and her final 'mad' scene is full of pathos.”
+                        </p>
+                        <p class="quote_author">Inge Kjemtrup, The Stage</p>
+                    </div>
+
+                    <!-- Quote 2 -->
+                    <div class="quote_card">
+                        <p class="quote_text">
+                            “This production benefits from some outstanding singers, chief of which is Ukrainian soprano Viktoriia Balan as Lady Macbeth making her Longborough debut. She perfectly matches Verdi's requirement for his femme fatale to have 'the voice of a devil'. She commands the stage and fearlessly dispatches Verdi's formidable challenges, richly dark below the stave and scorching when delivering a high D flat in her 'Una macchia è qui tuttora!' Self-possessed, she bestrides the stage in a black leather coat giving faint hints of a dominatrix, her 'Brindisi' wonderfully rousing.”
+                        </p>
+                        <p class="quote_author">David Truslove, Opera Today</p>
+                    </div>
+
+                    <!-- Quote 3 -->
+                    <div class="quote_card">
+                        <p class="quote_text">
+                            “Viktoriia Balan's company debut is a triumph. Lady Macbeth is one of Verdi's most demanding creations, requiring not simply vocal stamina but complete dramatic conviction, and Balan delivers both. The voice combines warmth, richness and thrilling brilliance across its range, but what impresses most is the intelligence behind the singing. Every phrase has dramatic purpose... Balan's performance charts the character's psychological disintegration with unwavering authority. It is the sort of debut that immediately marks out a singer to watch.”
+                        </p>
+                        <p class="quote_author">Mike Smith, OperaScene</p>
+                    </div>
+
+                    <!-- Quote 4 -->
+                    <div class="quote_card">
+                        <p class="quote_text">
+                            “Viktoriia Balan's gleefully sadistic Lady Macbeth. It must be one of the most fun roles to play in the canon and Balan lapped up sneer with sinister ease. An electric chemistry with Stone's Macbeth, she feels genuinely dangerous... There is a real focussed power behind the voice coupled with a tactile grasp of the Italian text: a very, very engaging and exciting performance.”
+                        </p>
+                        <p class="quote_author">Jonathan Whiting, Opera Now</p>
+                    </div>
+
+                    <!-- Quote 5 -->
+                    <div class="quote_card">
+                        <p class="quote_text">
+                            “As Lady Macbeth, Viktoriia Balan delivers an exceptional performance both vocally and dramatically. She makes one of Verdi's most demanding soprano roles appear deceptively effortless. Ambizioso spirto, with its treacherous coloratura, extreme dynamic contrasts and relentless vocal demands, is sung with complete assurance. The sleepwalking scene proves even more remarkable... Her richly coloured voice and commanding stage presence make for a memorable Lady Macbeth.”
+                        </p>
+                        <p class="quote_author">Josi Steinfeld, Plays To See</p>
+                    </div>
+
+                    <!-- Quote 6 -->
+                    <div class="quote_card">
+                        <p class="quote_text">
+                            “Viktoriia Balan was an outstanding Lady Macbeth, who revealed a sumptuous soprano that was possessed of a certain edge that worked perfectly for the role. Her transformation from the person who seemed almost too good at keeping any guilt in check, to one who was completely lost to madness, felt convincing.”
+                        </p>
+                        <p class="quote_author">Sam Smith, MusicOMH</p>
+                    </div>
+
+                    <!-- Quote 7 -->
+                    <div class="quote_card">
+                        <p class="quote_text">
+                            “Two rising stars took the plaudits on opening night of Longborough's first-ever production of Verdi's Macbeth. Soprano, Viktoriia Balan made a stunning debut in the role of Lady Macbeth. With her glorious soprano voice she is an instant success... The star, the very talented soprano, Viktoriia Balan, makes a lovely pairing with baritone Stone...”
+                        </p>
+                        <p class="quote_author">Clive Peacock, Seen and Heard International</p>
+                    </div>
+
+                    <!-- Quote 8 -->
+                    <div class="quote_card">
+                        <p class="quote_text">
+                            “Viktoriia Balan makes a stirring impression as a forceful Lady Macbeth with an iron will, though also able to modify her temperament convincingly to coax or goad as needs be, demonstrating firmly that she wears the trousers.”
+                        </p>
+                        <p class="quote_author">Curtis Rogers, Classical Source</p>
+                    </div>
+
+                    <!-- Quote 9 -->
+                    <div class="quote_card">
+                        <p class="quote_text">
+                            “...with Ukrainian soprano Viktoriia Balan spirited and extremely well sung as Lady Macbeth.”
+                        </p>
+                        <p class="quote_author">Mark Ronan, The Article</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section_divider"></div>
+
+            <!-- SECTION 2: ANNA -->
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-11">
+                    
+                    <div class="role_section_title">
+                        <h2>Anna</h2>
+                        <h4>Riccardo Zandonai — I Cavalieri di Ekebù | Teatro Zandonai, Rovereto, Italy</h4>
+                    </div>
+
+                    <!-- Quote 1 -->
+                    <div class="quote_card">
+                        <p class="quote_text">
+                            “The two leading ladies were particularly outstanding: Viktoriia Balan endowed Anna with a bright and incisive vocal timbre.”
+                        </p>
+                        <p class="quote_text_original">
+                            “Ottime soprattutto le prove delle due protagoniste femminili:... Viktoriia Balan presta ad Anna un timbro luminoso e incisivo.”
+                        </p>
+                        <p class="quote_author">Stefano Nardelli, Il Giornale della Musica</p>
+                    </div>
+
+                    <!-- Quote 2 -->
+                    <div class="quote_card">
+                        <p class="quote_text">
+                            “The entire cast met the considerable demands of their roles. Particularly compelling was Viktoriia Balan's Anna, sung with heartfelt emotion, a beautifully lustrous tone and assured musicianship.”
+                        </p>
+                        <p class="quote_text_original">
+                            “Tutti gli interpreti hanno soddisfatto la complessità dei ruoli loro affidati. Suggestiva la Anna del soprano Viktoriia Balan, operativa da tempo in Trentino, ha cantato con calorosa emozione ed ha avuto emissioni di bello smalto e sicura musicalità.”
+                        </p>
+                        <p class="quote_author">Federica Fanizza, ArtesNews</p>
+                    </div>
+
+                    <!-- Quote 3 -->
+                    <div class="quote_card">
+                        <p class="quote_text">
+                            “In the second performance, Anna was interpreted by soprano Viktoriia Balan with an ideal lyrical impulse, a finely shaped musical line and impressive vocal stamina.”
+                        </p>
+                        <p class="quote_text_original">
+                            “Alla seconda recita di domenica 26 aprile, Anna è stata interpretata con giusto empito lirico e buona linea musicale, oltre che tenuta vocale, dal soprano Viktoriia Balan.”
+                        </p>
+                        <p class="quote_author">Andrea Merli, I Teatri dell'Est</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- press_area_end -->
+
+    <!-- contact_rsvp -->
+    <div class="contact_rsvp" style="padding: 70px 0; background-color: #1a1a1a;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="text text-center">
+                        <h3 style="color: #ffffff; font-family: 'Cormorant Garamond', serif; font-size: 32px; margin-bottom: 20px;">For Engagements & Booking</h3>
+                        <a class="boxed-btn3-gold" href="contact.html">Contact Viktoriia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ contact_rsvp -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="footer_top" style="padding: 50px 0;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-md-8 text-center">
+                        <div class="footer_widget">
+                            <h3 class="footer_title" style="margin-bottom: 20px;">Follow Me</h3>
+                            <div class="social_links">
+                                <ul style="justify-content: center; display: flex; gap: 15px; padding: 0; list-style: none;">
+                                    <li><a href="https://www.facebook.com/viktoriia.balan.soprano" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://www.instagram.com/viktoriia.balan.soprano" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="https://www.youtube.com/@viktoriia_balan" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube-play"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-12 text-center">
+                        <p class="copy_right text-center" style="float: none; margin: 0 auto; display: block;">
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Viktoriia Balan
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/ footer end -->
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/audioplayer.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
