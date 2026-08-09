@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Videos | Viktoriia Balan - Soprano</title>
-    <meta name="description" content="Watch video performances of soprano Viktoriia Balan.">
+    <meta name="description" content="Video performances and recordings of Viktoriia Balan - Soprano">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSS -->
@@ -29,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* БЛОКУВАННЯ РУХІВ ШАПКИ */
+        /* БЛОКУВАННЯ ШАПКИ */
         header {
             position: fixed !important;
             top: 0 !important;
@@ -88,37 +88,95 @@
             color: #c5a059 !important;
         }
 
-        /* ВІДЕОНАЛАШТУВАННЯ: ОДНАКОВІ ОБКЛАДИНКИ ВІДЕО */
-        .youtube_video_area {
-            padding: 60px 0;
-            background-color: #000000;
+        /* ВЕРХНІЙ БАННЕР СТОРІНКИ (BRADCAM) */
+        .bradcam_area {
+            padding: 180px 0 80px 0;
+            background-color: #111111;
+            text-align: center;
         }
 
-        .youtube_video_area .single_video {
+        .bradcam_area h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 48px !important;
+            color: #ffffff !important;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        /* ЗАГОЛОВКИ СЕКЦІЙ ГАЛЕРЕЇ */
+        .section_subtitle {
+            font-family: 'Cormorant Garamond', Georgia, serif !important;
+            font-size: 36px !important;
+            color: #111111 !important;
+            font-weight: 600;
             position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .section_subtitle::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: #c5a059;
+            margin: 10px auto 0 auto;
+        }
+
+        /* ВБУДОВАНІ ПЛЕЄРИ В КАРТКАХ */
+        .video_card {
+            background: #181818;
+            border-radius: 6px;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
+            transition: transform 0.3s ease;
         }
 
-        .youtube_video_area .single_video .thumb {
-            width: 100%;
-            height: 360px; /* Фіксована однакова висота для всіх обкладинок */
-            overflow: hidden;
+        .video_card:hover {
+            transform: translateY(-5px);
+        }
+
+        .responsive_video_container {
             position: relative;
+            padding-bottom: 56.25%; /* Співвідношення 16:9 */
+            height: 0;
+            overflow: hidden;
+            background-color: #000;
         }
 
-        .youtube_video_area .single_video .thumb img {
+        .responsive_video_container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ідеально вирівнює та вміщує фото без спотворень */
-            object-position: center;
-            display: block;
+            border: 0;
         }
 
-        @media (max-width: 767px) {
-            .youtube_video_area .single_video .thumb {
-                height: 250px; /* Адаптивна висота для мобільних пристроїв */
-            }
+        .video_info_box {
+            padding: 18px 20px;
+            text-align: left;
+        }
+
+        .video_info_box span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #c5a059;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .video_info_box h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: #ffffff;
+            margin: 0;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -133,6 +191,7 @@
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
                             
+                            <!-- ЛОГОТИП -->
                             <div class="col-xl-3 col-lg-3 col-md-4">
                                 <div class="logo">
                                     <a href="index.html" class="brand_logo_link">
@@ -142,6 +201,7 @@
                                 </div>
                             </div>
 
+                            <!-- НАВІГАЦІЯ -->
                             <div class="col-xl-6 col-lg-7">
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
@@ -150,7 +210,7 @@
                                             <li><a href="about.html">About</a></li>
                                             <li><a href="repertoire.html">Repertoire</a></li>
                                             <li><a href="press.html">Reviews</a></li>
-                                            <li class="active"><a href="#">Media <i class="ti-angle-down"></i></a>
+                                            <li><a class="active" href="#">Media <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">Photos</a></li>
                                                     <li><a href="single-blog.html">Videos</a></li>
@@ -162,6 +222,7 @@
                                 </div>
                             </div>
 
+                            <!-- СОЦМЕРЕЖІ -->
                             <div class="col-xl-3 col-lg-2 d-none d-lg-block">
                                 <div class="social_icon text-right">
                                     <ul>
@@ -195,109 +256,83 @@
     </header>
     <!-- header-end -->
 
-    <!-- bradcam_area -->
-    <div class="bradcam_area bradcam_bg_1" style="padding-top: 150px; padding-bottom: 60px;">
+    <!-- bradcam_area start -->
+    <div class="bradcam_area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
-                    <div class="bradcam_text text-center">
-                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 48px; color: #fff; text-transform: uppercase; letter-spacing: 2px;">Videos</h3>
-                    </div>
+                    <h3>Videos</h3>
                 </div>
             </div>
         </div>
     </div>
-    <!-- /bradcam_area -->
+    <!-- bradcam_area end -->
 
-    <!-- youtube_video_area -->
-    <div class="youtube_video_area">
+    <!-- GALLERY SECTION: EMBEDDED VIDEOS -->
+    <div class="gallery_area pt-5 pb-5">
         <div class="container">
             <div class="row">
-                
+                <div class="col-xl-12 text-center">
+                    <h2 class="section_subtitle">Performances</h2>
+                </div>
+            </div>
+            
+            <div class="row">
                 <!-- Відео 1 -->
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="single_video">
-                        <div class="thumb">
-                            <img src="img/hero9.jpg" alt="G. Verdi - Vieni t’affretta… or tutti sorgetti">
+                <div class="col-lg-6 col-md-6">
+                    <div class="video_card">
+                        <div class="responsive_video_container">
+                            <iframe src="https://www.youtube.com/embed/fTLM-9iZspg" title="G. Verdi - Vieni t’affretta… or tutti sorgetti" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div class="hover_elements">
-                            <div class="video">
-                                <a href="https://www.youtube.com/watch?v=fTLM-9iZspg" target="_blank" rel="noopener noreferrer"> 
-                                    <i class="fa fa-play"></i>
-                                </a>
-                            </div>
-                            <div class="hover_inner">
-                                <span>G. Verdi</span>
-                                <h3><a href="https://www.youtube.com/watch?v=fTLM-9iZspg" target="_blank" rel="noopener noreferrer">Vieni t’affretta… or tutti sorgetti</a></h3>
-                            </div>
+                        <div class="video_info_box">
+                            <span>G. Verdi</span>
+                            <h4>Vieni t’affretta… or tutti sorgetti</h4>
                         </div>
                     </div>
                 </div>
 
                 <!-- Відео 2 -->
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="single_video">
-                        <div class="thumb">
-                            <img src="img/hero8.jpg" alt="F. Cilea - Io son umile ancella">
+                <div class="col-lg-6 col-md-6">
+                    <div class="video_card">
+                        <div class="responsive_video_container">
+                            <iframe src="https://www.youtube.com/embed/MPkstcO3GK8" title="F. Cilea - Io son umile ancella" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div class="hover_elements">
-                            <div class="video">
-                                <a href="https://www.youtube.com/watch?v=MPkstcO3GK8" target="_blank" rel="noopener noreferrer"> 
-                                    <i class="fa fa-play"></i>
-                                </a>
-                            </div>
-                            <div class="hover_inner">
-                                <span>F. Cilea</span>
-                                <h3><a href="https://www.youtube.com/watch?v=MPkstcO3GK8" target="_blank" rel="noopener noreferrer">Io son umile ancella</a></h3>
-                            </div>
+                        <div class="video_info_box">
+                            <span>F. Cilea</span>
+                            <h4>Io son umile ancella</h4>
                         </div>
                     </div>
                 </div>
 
                 <!-- Відео 3 -->
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="single_video">
-                        <div class="thumb">
-                            <img src="img/hero2.jpg" alt="R. Wagner - Dich teure Halle">
+                <div class="col-lg-6 col-md-6">
+                    <div class="video_card">
+                        <div class="responsive_video_container">
+                            <iframe src="https://www.youtube.com/embed/KNrCTVxhvjg" title="R. Wagner - Dich teure Halle" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div class="hover_elements">
-                            <div class="video">
-                                <a href="https://www.youtube.com/watch?v=KNrCTVxhvjg" target="_blank" rel="noopener noreferrer"> 
-                                    <i class="fa fa-play"></i>
-                                </a>
-                            </div>
-                            <div class="hover_inner">
-                                <span>R. Wagner</span>
-                                <h3><a href="https://www.youtube.com/watch?v=KNrCTVxhvjg" target="_blank" rel="noopener noreferrer">Dich teure Halle</a></h3>
-                            </div>
+                        <div class="video_info_box">
+                            <span>R. Wagner</span>
+                            <h4>Dich teure Halle</h4>
                         </div>
                     </div>
                 </div>
 
                 <!-- Відео 4 -->
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="single_video">
-                        <div class="thumb">
-                            <img src="img/hero1.jpg" alt="W. A. Mozart - E Susanna non vien… Dove sono">
+                <div class="col-lg-6 col-md-6">
+                    <div class="video_card">
+                        <div class="responsive_video_container">
+                            <iframe src="https://www.youtube.com/embed/CeqQg9tuDiA" title="W. A. Mozart - E Susanna non vien… Dove sono" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div class="hover_elements">
-                            <div class="video">
-                                <a href="https://www.youtube.com/watch?v=CeqQg9tuDiA" target="_blank" rel="noopener noreferrer"> 
-                                    <i class="fa fa-play"></i>
-                                </a>
-                            </div>
-                            <div class="hover_inner">
-                                <span>W. A. Mozart</span>
-                                <h3><a href="https://www.youtube.com/watch?v=CeqQg9tuDiA" target="_blank" rel="noopener noreferrer">E Susanna non vien… Dove sono</a></h3>
-                            </div>
+                        <div class="video_info_box">
+                            <span>W. A. Mozart</span>
+                            <h4>E Susanna non vien… Dove sono</h4>
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
-    <!-- / youtube_video_area -->
 
     <!-- FOOTER -->
     <footer class="footer" style="background-color: #111111; padding: 40px 0 20px 0;">
@@ -340,17 +375,7 @@
     <script src="js/wow.min.js"></script>
     <script src="js/nice-select.min.js"></script>
     <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/gijgo.min.js"></script>
-
-    <!-- contact js -->
-    <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-
     <script src="js/main.js"></script>
 
 </body>
