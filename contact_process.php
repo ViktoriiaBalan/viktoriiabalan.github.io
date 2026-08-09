@@ -1,37 +1,32 @@
 <?php
 
-    $to = "spn8@spondonit.com";
+    // Ваша адреса для отримання листів
+    $to = "viktoriiab16@gmail.com";
+    
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
     $subject = $_REQUEST['subject'];
-    $number = $_REQUEST['number'];
     $cmessage = $_REQUEST['message'];
 
-    $headers = "From: $from";
-	$headers = "From: " . $from . "\r\n";
-	$headers .= "Reply-To: ". $from . "\r\n";
-	$headers .= "MIME-Version: 1.0\r\n";
-	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    $headers = "From: " . $from . "\r\n";
+    $headers .= "Reply-To: ". $from . "\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-    $subject = "You have a message from your Bitmap Photography.";
+    $mail_subject = "New Message from Website: " . $subject;
 
-    $logo = 'img/logo.png';
-    $link = '#';
+    $body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'></head><body>";
+    $body .= "<table style='width: 100%; max-width: 600px; border-collapse: collapse; font-family: Arial, sans-serif;'>";
+    $body .= "<thead style='background: #111111; color: #ffffff;'><tr><td style='padding: 15px; font-size: 18px;' colspan='2'>New Message from Viktoriia Balan Website</td></tr></thead>";
+    $body .= "<tbody>";
+    $body .= "<tr><td style='padding: 10px; border: 1px solid #dddddd; font-weight: bold;'>Name:</td><td style='padding: 10px; border: 1px solid #dddddd;'>{$name}</td></tr>";
+    $body .= "<tr><td style='padding: 10px; border: 1px solid #dddddd; font-weight: bold;'>Email:</td><td style='padding: 10px; border: 1px solid #dddddd;'>{$from}</td></tr>";
+    $body .= "<tr><td style='padding: 10px; border: 1px solid #dddddd; font-weight: bold;'>Subject:</td><td style='padding: 10px; border: 1px solid #dddddd;'>{$subject}</td></tr>";
+    $body .= "<tr><td style='padding: 10px; border: 1px solid #dddddd; font-weight: bold;'>Message:</td><td style='padding: 10px; border: 1px solid #dddddd;'>{$cmessage}</td></tr>";
+    $body .= "</tbody>";
+    $body .= "</table>";
+    $body .= "</body></html>";
 
-	$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Express Mail</title></head><body>";
-	$body .= "<table style='width: 100%;'>";
-	$body .= "<thead style='text-align: center;'><tr><td style='border:none;' colspan='2'>";
-	$body .= "<a href='{$link}'><img src='{$logo}' alt=''></a><br><br>";
-	$body .= "</td></tr></thead><tbody><tr>";
-	$body .= "<td style='border:none;'><strong>Name:</strong> {$name}</td>";
-	$body .= "<td style='border:none;'><strong>Email:</strong> {$from}</td>";
-	$body .= "</tr>";
-	$body .= "<tr><td style='border:none;'><strong>Subject:</strong> {$csubject}</td></tr>";
-	$body .= "<tr><td></td></tr>";
-	$body .= "<tr><td colspan='2' style='border:none;'>{$cmessage}</td></tr>";
-	$body .= "</tbody></table>";
-	$body .= "</body></html>";
-
-    $send = mail($to, $subject, $body, $headers);
+    $send = mail($to, $mail_subject, $body, $headers);
 
 ?>
