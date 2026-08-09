@@ -30,33 +30,33 @@
 
     <style>
         /* ПОВНЕ БЛОКУВАННЯ БУДЬ-ЯКИХ РУХІВ ШАПКИ ПРИ СКРОЛІ */
-header {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 99999 !important;
-}
+        header {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            z-index: 99999 !important;
+        }
 
-.header-area,
-.main-header-area,
-#sticky-header,
-.sticky {
-    position: relative !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    background-color: rgba(0, 0, 0, 0.9) !important; /* Фіксований темний фон */
-    backdrop-filter: blur(5px);
-    
-    /* Вимикаємо трансформації та анімації, які викликають скрипти теми */
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-    box-shadow: none !important;
-    margin: 0 !important;
-}
-		
+        .header-area,
+        .main-header-area,
+        #sticky-header,
+        .sticky {
+            position: relative !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            background-color: rgba(0, 0, 0, 0.9) !important; /* Фіксований темний фон */
+            backdrop-filter: blur(5px);
+            
+            /* Вимикаємо трансформації та анімації, які викликають скрипти теми */
+            animation: none !important;
+            transition: none !important;
+            transform: none !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+        }
+        
         /* 1. ЕЛЕГАНТНИЙ ЛОГОТИП У ШАПЦІ */
         .brand_logo_link {
             display: flex;
@@ -188,6 +188,22 @@ header {
             background-color: #111111 !important;
             color: #ffffff !important;
         }
+
+        /* 5. НАЛАШТУВАННЯ ГАЛЕРЕЇ ДЛЯ РІВНИХ БЛОКІВ БЕЗ ОБРІЗАННЯ ФОТО */
+        .portfolio-img {
+            height: 420px; /* Єдина висота кадру для всіх */
+            background-color: #111111; /* Темний елегантний фон під фото з полями */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Зберігає пропорції та повністю вміщує фото без кадрування */
+        }
     </style>
 </head>
 
@@ -310,181 +326,176 @@ header {
     </div>
     <!--/ about_area -->
 
-</body>
-</html>
-
-<!-- gallery -->
-<div class="gallery_area">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="section_title text-center mb-65">
-                    <h3>Gallery</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row grid">
-            <!-- Фото 1 (Верхній ряд, Колонка 1) -->
-            <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
-                <div class="single-gallery mb-30">
-                    <div class="portfolio-img">
-                        <img src="img/gallery/1.jpg" alt="Gallery Photo 1">
-                    </div>
-                    <div class="gallery_hover">
-                        <a class="popup-image hover_inner" href="img/gallery/1.jpg">
-                            <i class="ti-plus"></i>
-                        </a>
+    <!-- gallery -->
+    <div class="gallery_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-65">
+                        <h3>Gallery</h3>
                     </div>
                 </div>
             </div>
-
-            <!-- Фото 2 (Верхній ряд, Колонка 2) -->
-            <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
-                <div class="single-gallery mb-30">
-                    <div class="portfolio-img">
-                        <img src="img/gallery/5.jpg" alt="Gallery Photo 2">
-                    </div>
-                    <div class="gallery_hover">
-                        <a class="popup-image hover_inner" href="img/gallery/2.jpg">
-                            <i class="ti-plus"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Фото 3 (Верхній ряд, Колонка 3) -->
-            <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
-                <div class="single-gallery mb-30">
-                    <div class="portfolio-img">
-                        <img src="img/gallery/3.jpg" alt="Gallery Photo 3">
-                    </div>
-                    <div class="gallery_hover">
-                        <a class="popup-image hover_inner" href="img/gallery/3.jpg">
-                            <i class="ti-plus"></i>
-                        </a>
+            <div class="row grid">
+                <!-- Верхній ряд: Фото 3 -->
+                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                    <div class="single-gallery mb-30">
+                        <div class="portfolio-img">
+                            <img src="img/gallery/3.jpg" alt="Gallery Photo 3">
+                        </div>
+                        <div class="gallery_hover">
+                            <a class="popup-image hover_inner" href="img/gallery/3.jpg">
+                                <i class="ti-plus"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Фото 4 (Нижній ряд, Колонка 1) -->
-            <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
-                <div class="single-gallery mb-30">
-                    <div class="portfolio-img">
-                        <img src="img/gallery/4.jpg" alt="Gallery Photo 4">
-                    </div>
-                    <div class="gallery_hover">
-                        <a class="popup-image hover_inner" href="img/gallery/4.jpg">
-                            <i class="ti-plus"></i>
-                        </a>
+                <!-- Верхній ряд: Фото 4 -->
+                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                    <div class="single-gallery mb-30">
+                        <div class="portfolio-img">
+                            <img src="img/gallery/4.jpg" alt="Gallery Photo 4">
+                        </div>
+                        <div class="gallery_hover">
+                            <a class="popup-image hover_inner" href="img/gallery/4.jpg">
+                                <i class="ti-plus"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Фото 5 (Нижній ряд, Колонка 2) -->
-            <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
-                <div class="single-gallery mb-30">
-                    <div class="portfolio-img">
-                        <img src="img/gallery/2.jpg" alt="Gallery Photo 5">
-                    </div>
-                    <div class="gallery_hover">
-                        <a class="popup-image hover_inner" href="img/gallery/5.jpg">
-                            <i class="ti-plus"></i>
-                        </a>
+                <!-- Верхній ряд: Фото 1 -->
+                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                    <div class="single-gallery mb-30">
+                        <div class="portfolio-img">
+                            <img src="img/gallery/1.jpg" alt="Gallery Photo 1">
+                        </div>
+                        <div class="gallery_hover">
+                            <a class="popup-image hover_inner" href="img/gallery/1.jpg">
+                                <i class="ti-plus"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Фото 6 (Нижній ряд, Колонка 3) -->
-            <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
-                <div class="single-gallery mb-30">
-                    <div class="portfolio-img">
-                        <img src="img/gallery/6.jpg" alt="Gallery Photo 6">
+                <!-- Нижній ряд: Фото 5 -->
+                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                    <div class="single-gallery mb-30">
+                        <div class="portfolio-img">
+                            <img src="img/gallery/5.jpg" alt="Gallery Photo 5">
+                        </div>
+                        <div class="gallery_hover">
+                            <a class="popup-image hover_inner" href="img/gallery/5.jpg">
+                                <i class="ti-plus"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="gallery_hover">
-                        <a class="popup-image hover_inner" href="img/gallery/6.jpg">
-                            <i class="ti-plus"></i>
-                        </a>
+                </div>
+
+                <!-- Нижній ряд: Фото 6 -->
+                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                    <div class="single-gallery mb-30">
+                        <div class="portfolio-img">
+                            <img src="img/gallery/6.jpg" alt="Gallery Photo 6">
+                        </div>
+                        <div class="gallery_hover">
+                            <a class="popup-image hover_inner" href="img/gallery/6.jpg">
+                                <i class="ti-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Нижній ряд: Фото 2 -->
+                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                    <div class="single-gallery mb-30">
+                        <div class="portfolio-img">
+                            <img src="img/gallery/2.jpg" alt="Gallery Photo 2">
+                        </div>
+                        <div class="gallery_hover">
+                            <a class="popup-image hover_inner" href="img/gallery/2.jpg">
+                                <i class="ti-plus"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!--/ gallery -->
+    <!--/ gallery -->
 
     <!-- youtube_video_area  -->
-<div class="youtube_video_area">
-    <div class="container-fluid p-0">
-        <div class="row no-gutters">
-            <!-- Відео 1 -->
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single_video">
-                    <div class="thumb">
-                        <img src="img/video/1.png" alt="">
-                    </div>
-                    <div class="hover_elements">
-                        <div class="video">
-                            <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
-                                <i class="fa fa-play"></i>
-                            </a>
+    <div class="youtube_video_area">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <!-- Відео 1 -->
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single_video">
+                        <div class="thumb">
+                            <img src="img/video/1.png" alt="">
                         </div>
+                        <div class="hover_elements">
+                            <div class="video">
+                                <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
 
-                        <div class="hover_inner">
-                            <span>New York Show-2018</span>
-                            <h3><a href="#">Shadows of My Dream</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Відео 2 -->
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single_video">
-                    <div class="thumb">
-                        <img src="img/video/2.png" alt="">
-                    </div>
-                    <div class="hover_elements">
-                        <div class="video">
-                            <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
-                                <i class="fa fa-play"></i>
-                            </a>
-                        </div>
-
-                        <div class="hover_inner">
-                            <span>New York Show-2018</span>
-                            <h3><a href="#">Shadows of My Dream</a></h3>
+                            <div class="hover_inner">
+                                <span>New York Show-2018</span>
+                                <h3><a href="#">Shadows of My Dream</a></h3>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Відео 3 -->
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single_video">
-                    <div class="thumb">
-                        <img src="img/video/3.png" alt="">
-                    </div>
-                    <div class="hover_elements">
-                        <div class="video">
-                            <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
-                                <i class="fa fa-play"></i>
-                            </a>
+                <!-- Відео 2 -->
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single_video">
+                        <div class="thumb">
+                            <img src="img/video/2.png" alt="">
                         </div>
+                        <div class="hover_elements">
+                            <div class="video">
+                                <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
 
-                        <div class="hover_inner">
-                            <span>New York Show-2018</span>
-                            <h3><a href="#">Shadows of My Dream</a></h3>
+                            <div class="hover_inner">
+                                <span>New York Show-2018</span>
+                                <h3><a href="#">Shadows of My Dream</a></h3>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+                <!-- Відео 3 -->
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single_video">
+                        <div class="thumb">
+                            <img src="img/video/3.png" alt="">
+                        </div>
+                        <div class="hover_elements">
+                            <div class="video">
+                                <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+
+                            <div class="hover_inner">
+                                <span>New York Show-2018</span>
+                                <h3><a href="#">Shadows of My Dream</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
-<!-- / youtube_video_area  -->
-
-    
+    <!-- / youtube_video_area  -->
 
     <!-- contact_rsvp -->
     <div class="contact_rsvp">
@@ -501,7 +512,7 @@ header {
     </div>
     <!--/ contact_rsvp -->
 
-  <!-- footer start -->
+    <!-- footer start -->
     <footer class="footer">
         <div class="footer_top" style="padding: 50px 0;">
             <div class="container">
@@ -535,3 +546,6 @@ header {
         </div>
     </footer>
     <!--/ footer end -->
+
+</body>
+</html>
