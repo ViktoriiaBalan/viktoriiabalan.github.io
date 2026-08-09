@@ -23,13 +23,13 @@
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- ШРИФТИ GOOGLE FONTS ДЛЯ ЕЛЕГАНТНОГО СТИЛЮ -->
+    <!-- ШРИФТИ GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* ПОВНЕ БЛОКУВАННЯ БУДЬ-ЯКИХ РУХІВ ШАПКИ ПРИ СКРОЛІ */
+        /* БЛОКУВАННЯ РУХІВ ШАПКИ */
         header {
             position: fixed !important;
             top: 0 !important;
@@ -46,10 +46,8 @@
             top: 0 !important;
             left: 0 !important;
             width: 100% !important;
-            background-color: rgba(0, 0, 0, 0.9) !important; /* Фіксований темний фон */
+            background-color: rgba(0, 0, 0, 0.9) !important;
             backdrop-filter: blur(5px);
-            
-            /* Вимикаємо трансформації та анімації, які викликають скрипти теми */
             animation: none !important;
             transition: none !important;
             transform: none !important;
@@ -57,7 +55,7 @@
             margin: 0 !important;
         }
         
-        /* 1. ЕЛЕГАНТНИЙ ЛОГОТИП У ШАПЦІ */
+        /* ЛОГОТИП */
         .brand_logo_link {
             display: flex;
             flex-direction: column;
@@ -80,7 +78,7 @@
             font-family: 'Montserrat', sans-serif !important;
             font-size: 10px !important;
             font-weight: 400 !important;
-            color: #c5a059 !important; /* Вишуканий золотистий відтінок */
+            color: #c5a059 !important;
             letter-spacing: 4px !important;
             text-transform: uppercase;
             margin-top: 5px;
@@ -90,7 +88,7 @@
             color: #c5a059 !important;
         }
 
-        /* 2. НАЛАШТУВАННЯ БАННЕРА */
+        /* HERO БАННЕР */
         .custom_hero_bg {
             background-image: url('img/hero3.jpg');
             background-size: cover;
@@ -113,7 +111,7 @@
             z-index: 1;
         }
 
-        /* 3. ВИДІЛЕННЯ ГОЛОВНОЇ ЦИТАТИ */
+        /* ЦИТАТА ТА БІОГРАФІЯ */
         .about_area {
             background-color: #ffffff;
             padding: 80px 0;
@@ -121,22 +119,16 @@
 
         .about_info .about_featured_quote {
             font-family: 'Cormorant Garamond', Georgia, serif !important;
-            font-size: 32px !important; /* Збільшений розмір шрифту */
+            font-size: 32px !important;
             line-height: 1.35 !important;
             font-weight: 600 !important;
-            font-style: italic !important; /* Вишуканий курсив */
+            font-style: italic !important;
             color: #111111 !important;
             margin: 0 0 30px 0;
             padding: 5px 0 5px 22px;
             border: none;
-            border-left: 3px solid #c5a059 !important; /* Золота вертикальна лінія ліворуч */
+            border-left: 3px solid #c5a059 !important;
             position: relative;
-        }
-
-        /* Виділення важливих слів у цитаті золотим кольором */
-        .about_info .about_featured_quote .quote_highlight {
-            color: #a37c3f !important; /* Шляхетне золотисто-бронзове виділення */
-            font-weight: 700 !important;
         }
 
         .about_info .about_featured_quote span {
@@ -151,7 +143,6 @@
             text-transform: uppercase;
         }
 
-        /* 4. ОСНОВНИЙ ТЕКСТ БІОГРАФІЇ */
         .about_info p.about_bio_text {
             font-family: 'Montserrat', sans-serif !important;
             font-size: 15.5px !important;
@@ -161,16 +152,6 @@
             margin-bottom: 25px;
         }
 
-        .about_info p.about_bio_text strong {
-            font-weight: 600 !important;
-            color: #000000 !important;
-        }
-
-        .about_info p.about_bio_text em {
-            font-style: italic !important;
-        }
-
-        /* КНОПКА */
         .about_info .boxed-btn3-line {
             font-family: 'Montserrat', sans-serif !important;
             font-size: 11px !important;
@@ -189,42 +170,30 @@
             color: #ffffff !important;
         }
 
-        /* 5. МАЗОЇЧНА СІТКА (MASONRY) ДЛЯ ГАЛЕРЕЇ ВЕРТИКАЛЬНИХ ФОТО */
-        .gallery_area .grid {
-            display: block !important;
-            column-count: 3; /* 3 рівні колонки для великих екранів */
-            column-gap: 30px;
-        }
-
-        .gallery_area .grid-item {
-            width: 100% !important;
-            max-width: 100% !important;
-            display: inline-block;
-            margin-bottom: 30px;
-            break-inside: avoid; /* Запобігає розриву картки між колонками */
-        }
-
-        .gallery_area .single-gallery {
+        /* ВІДЕДОНАЛАШТУВАННЯ: ОДНАКОВІ ОБКЛАДИНКИ ВІДЕО */
+        .youtube_video_area .single_video {
             position: relative;
             overflow: hidden;
         }
 
-        .gallery_area .single-gallery img {
+        .youtube_video_area .single_video .thumb {
             width: 100%;
-            height: auto;
+            height: 360px; /* Фіксована однакова висота для всіх обкладинок */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .youtube_video_area .single_video .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ідеально вирівнює та вміщує фото без спотворень */
+            object-position: center;
             display: block;
         }
 
-        /* Адаптивність для планшетів та смартфонів */
-        @media (max-width: 991px) {
-            .gallery_area .grid {
-                column-count: 2; /* 2 колонки для планшетів */
-            }
-        }
-
-        @media (max-width: 576px) {
-            .gallery_area .grid {
-                column-count: 1; /* 1 колонка для мобільних пристроїв */
+        @media (max-width: 767px) {
+            .youtube_video_area .single_video .thumb {
+                height: 250px; /* Адаптивна висота для мобільних пристроїв */
             }
         }
     </style>
@@ -240,7 +209,6 @@
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
                             
-                            <!-- ТЕКСТОВИЙ ЛОГОТИП -->
                             <div class="col-xl-3 col-lg-3 col-md-4">
                                 <div class="logo">
                                     <a href="index.html" class="brand_logo_link">
@@ -250,7 +218,6 @@
                                 </div>
                             </div>
 
-                            <!-- НАВІГАЦІЯ -->
                             <div class="col-xl-6 col-lg-7">
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
@@ -271,7 +238,6 @@
                                 </div>
                             </div>
 
-                           <!-- СОЦМЕРЕЖІ -->
                             <div class="col-xl-3 col-lg-2 d-none d-lg-block">
                                 <div class="social_icon text-right">
                                     <ul>
@@ -305,7 +271,6 @@
     </header>
     <!-- header-end -->
 
-
     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="single_slider d-flex align-items-center custom_hero_bg">
@@ -319,25 +284,21 @@
             <div class="row align-items-center">
                 <div class="col-xl-5 col-md-6">
                     <div class="about_thumb">
-                        <!-- Фото співачки -->
                         <img class="img-fluid" src="img/hero1.jpg" alt="Viktoriia Balan">
                     </div>
                 </div>
                 <div class="col-xl-7 col-md-6">
                     <div class="about_info">
                         
-                        <!-- АКЦЕНТНА ГОЛОВНА ЦИТАТА З ЗОЛОТИМ МАРКЕРОМ ТА ЕЛЕГАНТНИМ ШРИФТОМ -->
                         <blockquote class="about_featured_quote">
                             “In the challenging spinto soprano role of Lady Macbeth, Viktoriia Balan is a revelation”
                             <span>— THE STAGE</span>
                         </blockquote>
 
-                        <!-- Офіційна біографія -->
                         <p class="about_bio_text">
                             Ukrainian lirico-spinto soprano Viktoriia Balan's <em>"glorious voice"</em> and <em>"bright and incisive vocal timbre"</em> have earned her recognition across European stages. She is a finalist and a prize winner of several prestigious international competitions, including <strong>1st Prize at "Spazio Musica" in Orvieto</strong>, <strong>2nd Prize at "Franco Bonisolli" in Rovereto</strong>, winner of the 78th <strong>"European Community" Competition in Spoleto</strong>. Her career highlights include UK debut as <strong>Lady Macbeth</strong> (<em>Macbeth</em>) at <strong>Longborough Festival Opera</strong>, debut at <strong>Teatro Lirico Sperimentale di Spoleto</strong> as <strong>La Contessa</strong> (<em>Le Nozze di Figaro</em>) and <strong>Lady Macbeth</strong>, and <strong>Anna</strong> in Zandonai's <em>I cavalieri di Ekebù</em> at <strong>Teatro Zandonai in Rovereto</strong>.
                         </p>
 
-                        <!-- Кнопка -->
                         <div class="about_btn_wrapper">
                             <a href="about.html" class="boxed-btn3-line">READ FULL BIO</a>
                         </div>
@@ -349,7 +310,7 @@
     </div>
     <!--/ about_area -->
 
-    <!-- gallery -->
+    <!-- gallery (ОРИГІНАЛЬНА СІТКА ДЛЯ 6 ФОТО) -->
     <div class="gallery_area">
         <div class="container">
             <div class="row">
@@ -360,36 +321,7 @@
                 </div>
             </div>
             <div class="row grid">
-                <!-- Фото 3 -->
-                <div class="grid-item">
-                    <div class="single-gallery mb-30">
-                        <div class="portfolio-img">
-                            <img src="img/gallery/3.jpg" alt="Gallery Photo 3">
-                        </div>
-                        <div class="gallery_hover">
-                            <a class="popup-image hover_inner" href="img/gallery/3.jpg">
-                                <i class="ti-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Фото 4 -->
-                <div class="grid-item">
-                    <div class="single-gallery mb-30">
-                        <div class="portfolio-img">
-                            <img src="img/gallery/4.jpg" alt="Gallery Photo 4">
-                        </div>
-                        <div class="gallery_hover">
-                            <a class="popup-image hover_inner" href="img/gallery/4.jpg">
-                                <i class="ti-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Фото 1 -->
-                <div class="grid-item">
+                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
                     <div class="single-gallery mb-30">
                         <div class="portfolio-img">
                             <img src="img/gallery/1.jpg" alt="Gallery Photo 1">
@@ -401,37 +333,7 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Фото 5 -->
-                <div class="grid-item">
-                    <div class="single-gallery mb-30">
-                        <div class="portfolio-img">
-                            <img src="img/gallery/5.jpg" alt="Gallery Photo 5">
-                        </div>
-                        <div class="gallery_hover">
-                            <a class="popup-image hover_inner" href="img/gallery/5.jpg">
-                                <i class="ti-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Фото 6 -->
-                <div class="grid-item">
-                    <div class="single-gallery mb-30">
-                        <div class="portfolio-img">
-                            <img src="img/gallery/6.jpg" alt="Gallery Photo 6">
-                        </div>
-                        <div class="gallery_hover">
-                            <a class="popup-image hover_inner" href="img/gallery/6.jpg">
-                                <i class="ti-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Фото 2 -->
-                <div class="grid-item">
+                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
                     <div class="single-gallery mb-30">
                         <div class="portfolio-img">
                             <img src="img/gallery/2.jpg" alt="Gallery Photo 2">
@@ -443,12 +345,60 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                    <div class="single-gallery mb-30">
+                        <div class="portfolio-img">
+                            <img src="img/gallery/3.jpg" alt="Gallery Photo 3">
+                        </div>
+                        <div class="gallery_hover">
+                            <a class="popup-image hover_inner" href="img/gallery/3.jpg">
+                                <i class="ti-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                    <div class="single-gallery mb-30">
+                        <div class="portfolio-img">
+                            <img src="img/gallery/4.jpg" alt="Gallery Photo 4">
+                        </div>
+                        <div class="gallery_hover">
+                            <a class="popup-image hover_inner" href="img/gallery/4.jpg">
+                                <i class="ti-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                    <div class="single-gallery mb-30">
+                        <div class="portfolio-img">
+                            <img src="img/gallery/5.jpg" alt="Gallery Photo 5">
+                        </div>
+                        <div class="gallery_hover">
+                            <a class="popup-image hover_inner" href="img/gallery/5.jpg">
+                                <i class="ti-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 grid-item">
+                    <div class="single-gallery mb-30">
+                        <div class="portfolio-img">
+                            <img src="img/gallery/6.jpg" alt="Gallery Photo 6">
+                        </div>
+                        <div class="gallery_hover">
+                            <a class="popup-image hover_inner" href="img/gallery/6.jpg">
+                                <i class="ti-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!--/ gallery -->
 
-    <!-- youtube_video_area  -->
+    <!-- youtube_video_area (ОДНАКОВІ ТА ВІДФОРМАТОВАНІ ОБКЛАДИНКИ) -->
     <div class="youtube_video_area">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
@@ -520,15 +470,13 @@
     </div>
     <!-- / youtube_video_area  -->
 
-    <!-- ЗБОРНИЙ ФУТЕР (Contact + Follow Me) -->
+    <!-- FOOTER -->
     <footer class="footer" style="background-color: #111111; padding: 40px 0 20px 0;">
         <div class="container text-center">
-            <!-- Кнопка Contact -->
             <div class="mb-4">
                 <a class="boxed-btn3" href="contact.html">Contact</a>
             </div>
             
-            <!-- Follow Me -->
             <div class="footer_widget mt-4">
                 <h3 class="footer_title" style="margin-bottom: 15px; color: #fff;">Follow Me</h3>
                 <div class="social_links">
@@ -540,7 +488,6 @@
                 </div>
             </div>
 
-            <!-- Копірайт -->
             <div class="footer_border mt-4 mb-3" style="border-top: 1px solid rgba(255,255,255,0.1);"></div>
             <p class="copy_right text-center" style="margin: 0; font-size: 13px; color: #777;">
                 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Viktoriia Balan
@@ -579,3 +526,4 @@
 
 </body>
 </html>
+
