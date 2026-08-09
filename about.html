@@ -90,78 +90,47 @@
             color: #c5a059 !important;
         }
 
-        /* 2. СТИЛІ БАННЕРА (3 ВЕРТИКАЛЬНІ ФОТО) */
-        .hero_triptych_section {
-            position: relative;
-            background-color: #080808;
-            padding-top: 80px; /* Відступ для хедера */
-            min-height: 70vh;
+        /* 2. НАЛАШТУВАННЯ БАННЕРА ТА НАДПИСУ "REPERTOIRE" ПО ЦЕНТРУ */
+        .custom_hero_bg {
+            background-image: url('img/hero5.jpg');
+            background-size: cover;
+            background-position: center 20% !important;
+            background-repeat: no-repeat !important;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-        }
-
-        .hero_grid_container {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px 15px;
-        }
-
-        .hero_img_wrapper {
             position: relative;
-            height: 480px;
-            overflow: hidden;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding-top: 80px;
         }
 
-        .hero_img_wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top center;
-            transition: transform 0.6s ease;
-            filter: brightness(0.85);
-        }
-
-        .hero_img_wrapper:hover img {
-            transform: scale(1.03);
-            filter: brightness(0.98);
-        }
-
-        /* Текстовий оверлей: зміщено донизу */
-        .hero_triptych_overlay {
+        .custom_hero_bg::before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: flex-end; /* Зміщує елемент вниз */
-            justify-content: center;
-            padding-bottom: 35px; /* Відступ від низу картинки */
-            pointer-events: none;
-            z-index: 5;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.6) 100%);
+            z-index: 1;
         }
 
         .hero_banner_title {
+            position: relative;
+            z-index: 2;
             font-family: 'Cormorant Garamond', Georgia, serif !important;
-            font-size: 52px !important;
+            font-size: 56px !important;
             font-weight: 500 !important;
             color: #ffffff !important;
-            letter-spacing: 8px;
+            letter-spacing: 6px;
             text-transform: uppercase;
             margin: 0;
+            transform: translateY(-90px);
             text-align: center;
-            background: rgba(0, 0, 0, 0.55);
-            backdrop-filter: blur(8px);
-            padding: 12px 45px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            width: 100%;
+            text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
         }
-
+        
         /* 3. СТИЛІ БІОГРАФІЇ */
         .about_area {
             background-color: #ffffff;
@@ -225,21 +194,6 @@
         .boxed-btn3-gold:hover {
             background-color: transparent !important;
             color: #c5a059 !important;
-        }
-
-        /* Мобільна адаптація */
-        @media (max-width: 767px) {
-            .hero_img_wrapper {
-                height: 320px;
-                margin-bottom: 15px;
-            }
-            .hero_banner_title {
-                font-size: 36px !important;
-                padding: 10px 25px;
-            }
-            .hero_triptych_overlay {
-                padding-bottom: 20px;
-            }
         }
     </style>
 </head>
@@ -320,31 +274,18 @@
     </header>
     <!-- header-end -->
 
-    <!-- slider_area_start (3 VERTICAL PHOTOS GRID) -->
-    <div class="hero_triptych_section">
-        <div class="container-fluid hero_grid_container">
-            <div class="row no-gutters justify-content-center align-items-center">
-                <div class="col-md-4 p-2">
-                    <div class="hero_img_wrapper">
-                        <img src="img/hero4.jpg" alt="Viktoriia Balan Soprano">
-                    </div>
-                </div>
-                <div class="col-md-4 p-2">
-                    <div class="hero_img_wrapper">
-                        <img src="img/hero3.jpg" alt="Viktoriia Balan Soprano">
-                    </div>
-                </div>
-                <div class="col-md-4 p-2">
-                    <div class="hero_img_wrapper">
-                        <img src="img/hero5.jpg" alt="Viktoriia Balan Soprano">
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider custom_hero_bg">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-10 font-pt">
+                        <div class="slider_text text-center">
+                            <h1 class="hero_banner_title">About</h1>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Заголовок опущенший донизу -->
-        <div class="hero_triptych_overlay">
-            <h1 class="hero_banner_title">About</h1>
         </div>
     </div>
     <!-- slider_area_end -->
